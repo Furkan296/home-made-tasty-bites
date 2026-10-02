@@ -1,0 +1,26 @@
+HOME MADE TASTY BITES — website update
+
+Upload index.html and the assets folder to the same GitHub Pages location as before. Keep existing assets available. These files do not deploy automatically.
+
+Completed:
+- Merged duplicate Makhani/Tandoori pizza variants into one menu entry per pizza and size, preserving prices. Sizes are Mini (6 inch) and Jumbo (8 inch).
+- Selected food cards turn green and show Added to cart with minus/quantity/plus controls.
+- Removed demo OTP; name, Indian mobile number and address are required. Maps link and current-location button remain.
+- Added an order review screen with one food item per line. The WhatsApp message is encoded as one complete text value.
+- Corrected the listed contact 9620711053 to the requested 9620611053, and added 9620522798.
+
+Pending external setup:
+- Automatic WhatsApp notifications to all four numbers are NOT active. The checkout still opens WhatsApp addressed to 8880852640. Customer must press Send. A normal click-to-chat link cannot automatically deliver to four separate accounts.
+- Requested recipients: +91 8880852640, +91 9880427955, +91 9620611053, +91 9620522798.
+- Implement automatic notifications with a server and an authorized WhatsApp messaging service. Credentials must stay on the server.
+- A shop-wide daily sequence such as HMTB-20261002001 requires a shared server/database counter with an atomic increment. GitHub Pages cannot itself run that counter.
+- Interim IDs contain India-date YYYYMMDD plus a cryptographically random 128-bit suffix. They are not sequential; collisions are extremely unlikely. Reopening the same unchanged order review retains the same ID.
+- Store orders server-side to share order status across staff devices. The existing admin dashboard still only lists drafts saved in the same browser. Opening WhatsApp does not prove a message was sent or an order accepted.
+
+Validation:
+JavaScript checks passed for pizza deduplication, cart quantity and totals, selection feedback markup, checkout without OTP, order review, WhatsApp text encoding, reuse of the draft ID, prevention of duplicate saved drafts, and 1,000 distinct generated IDs. No live WhatsApp delivery or visual browser test was performed.
+
+Additional menu/payment update:
+- Removed Shahi Tukda Small Box and Big Box; Regular remains.
+- Added Drinks: Campa Cola/Lemon/Orange at Rs10 and Rs20; Campa Can Rs30; Appy Fizz Rs20; Paper Boat Anar Rs20.
+- UPI QR shows the order total. Review and WhatsApp message instruct the customer to attach their payment screenshot manually. The website does not verify payment or attach screenshots automatically.
