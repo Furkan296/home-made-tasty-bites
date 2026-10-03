@@ -37,3 +37,5 @@ Latest update:
 - Each item has a product photo path; images/PHOTO-GUIDE.txt lists exact filenames. Missing photos fall back to existing emojis. Real photos still need to be supplied.
 
 Photo update: 20 supplied images linked to 48 menu entries. Missing photos retain emojis. Upload the whole images folder alongside index.html.
+
+GitHub path correction: product photos now load from the same directory as index.html, matching the uploaded repository screenshot. Upload the replacement index.html; existing root-level JPEGs can remain.
