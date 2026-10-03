@@ -7,11 +7,11 @@ Completed:
 - Selected food cards turn green and show Added to cart with minus/quantity/plus controls.
 - Removed demo OTP; name, Indian mobile number and address are required. Maps link and current-location button remain.
 - Added an order review screen with one food item per line. The WhatsApp message is encoded as one complete text value.
-- Corrected the listed contact 9620711053 to the requested 9620611053, and added 9620522798.
+- Corrected the listed contact 9620711053 to the requested 9620711053, and added 9620522798.
 
 Pending external setup:
 - Automatic WhatsApp notifications to all four numbers are NOT active. The checkout still opens WhatsApp addressed to 8880852640. Customer must press Send. A normal click-to-chat link cannot automatically deliver to four separate accounts.
-- Requested recipients: +91 8880852640, +91 9880427955, +91 9620611053, +91 9620522798.
+- Requested recipients: +91 8880852640, +91 9880427955, +91 9620711053, +91 9620522798.
 - Implement automatic notifications with a server and an authorized WhatsApp messaging service. Credentials must stay on the server.
 - A shop-wide daily sequence such as HMTB-20261002001 requires a shared server/database counter with an atomic increment. GitHub Pages cannot itself run that counter.
 - Interim IDs contain India date plus HHMMSSmmm (hours, minutes, seconds, milliseconds). They are not a shared daily sequence. A browser-local monotonic timestamp avoids repeated IDs in the same browser; different devices can still generate the same ID in the same millisecond. A backend is required to guarantee global uniqueness. Reopening an unchanged order review retains its ID.
@@ -29,3 +29,11 @@ Latest update:
 - Removed random hexadecimal order suffix; ID now reads HMTB-YYYYMMDD-HHMMSSmmm using India time.
 - Drink names no longer include pack/price text. Price stays on each menu card and is included per drink in the WhatsApp summary to distinguish Rs10 and Rs20 products.
 - Image paths match existing root-level GitHub files, with assets-folder fallback.
+
+Latest update:
+- Shop map: https://maps.app.goo.gl/Lm4yGGYjXp6wwXGm6
+- Correct contact: 9620711053.
+- Added 29 Ice Cream entries with specified MRPs.
+- Each item has a product photo path; images/PHOTO-GUIDE.txt lists exact filenames. Missing photos fall back to existing emojis. Real photos still need to be supplied.
+
+Photo update: 20 supplied images linked to 48 menu entries. Missing photos retain emojis. Upload the whole images folder alongside index.html.

@@ -1,0 +1,98 @@
+PRODUCT PHOTO MAPPING
+
+20 supplied files are included and assigned to 48 menu entries. Shared photos cover similar variants and sizes as requested. The file named corn.jpg shows chicken popcorn, so it is assigned to Chicken Popcorn. Wraps use their closest supplied spring-roll photos. Photos are representative.
+
+Assigned photos:
+Jumbo (8 inch) — Classic Veg Cheese Pizza (Rs120) | images/magaritta-pizza.jpg
+Jumbo (8 inch) — Corn Cheese Pizza (Rs140) | images/corn-cheese-pizza.jpg
+Jumbo (8 inch) — Paneer Cheese Pizza (Rs160) | images/paneer-pizza.jpg
+Jumbo (8 inch) — Magaritta Pizza (Rs160) | images/magaritta-pizza.jpg
+Jumbo (8 inch) — Chicken Cheese Pizza (Rs180) | images/chicken-cheese-pizza.jpg
+Mini (6 inch) — Classic Veg Cheese Pizza (Rs80) | images/magaritta-pizza.jpg
+Mini (6 inch) — Corn Cheese Pizza (Rs100) | images/corn-cheese-pizza.jpg
+Mini (6 inch) — Paneer Cheese Pizza (Rs120) | images/paneer-pizza.jpg
+Mini (6 inch) — Chicken Cheese Pizza (Rs140) | images/chicken-cheese-pizza.jpg
+Bombay Style (Regular) — Veg Sandwich (Rs35) | images/veg-corn-cheese-sandwich.jpg
+Bombay Style (Regular) — Chicken Sandwich (Rs60) | images/chicken-cheese-sandwich-grilled.jpg
+Bombay Style (Regular) — Cheese Sandwich (Rs50) | images/veg-corn-cheese-sandwich.jpg
+Bombay Style (Regular) — Chicken Cheese Sandwich (Rs70) | images/chicken-cheese-sandwich-grilled.jpg
+Grilled Style (Jumbo) — Veg Corn Sandwich (Rs60) | images/veg-corn-cheese-sandwich.jpg
+Grilled Style (Jumbo) — Veg Corn Cheese Sandwich (Rs70) | images/veg-corn-cheese-sandwich.jpg
+Grilled Style (Jumbo) — Paneer Sandwich (Rs70) | images/paneer-cheese-sandwich.jpg
+Grilled Style (Jumbo) — Paneer Cheese Sandwich (Rs80) | images/paneer-cheese-sandwich.jpg
+Grilled Style (Jumbo) — Chicken Sandwich (Rs80) | images/chicken-cheese-sandwich-grilled.jpg
+Grilled Style (Jumbo) — Chicken Cheese Sandwich (Rs90) | images/chicken-cheese-sandwich-grilled.jpg
+Grilled Style (Jumbo) — Mix Triple Bread Sandwich (Rs120) | images/veg-corn-cheese-sandwich.jpg
+Regular — Veg Burger (Rs50) | images/veg-cheese-burger.jpg
+Regular — Veg Cheese Burger (Rs60) | images/veg-cheese-burger.jpg
+Regular — Chicken Burger (Rs80) | images/chicken-burger.jpg
+Regular — Chicken Cheese Burger (Rs90) | images/chicken-burger.jpg
+Regular — Crispy Chicken Burger (Rs90) | images/crispy-chicken-cheese-burger.jpg
+Regular — Crispy Chicken Cheese Burger (Rs100) | images/crispy-chicken-cheese-burger.jpg
+Jumbo — Chicken Cheese Burger (Rs110) | images/chicken-burger.jpg
+Jumbo — Crispy Chicken Cheese Burger (Rs120) | images/crispy-chicken-cheese-burger.jpg
+KFC Style — Chicken Strips (5 pcs) (Rs100) | images/chicken-strips.jpg
+KFC Style — Chicken Popcorn (8 pcs) (Rs70) | images/corn.jpg
+Regular — Spring Veg Paneer Roll (Rs20) | images/veg-soring-roll.jpg
+Regular — Spring Chicken Roll (Rs35) | images/chicken-spring-roll.jpg
+Single Tortilla — Veg Corn Cheese Wrap (Rs90) | images/veg-soring-roll.jpg
+Single Tortilla — Paneer Cheese Wrap (Rs100) | images/veg-soring-roll.jpg
+Single Tortilla — Chicken Cheese Wrap (Rs110) | images/chicken-spring-roll.jpg
+Single Tortilla — Crispy Chicken Cheese Wrap (Rs130) | images/chicken-spring-roll.jpg
+Single Tortilla — Mix Wrap (Cochipa Wrap) (Rs120) | images/chicken-spring-roll.jpg
+Double Tortilla — Veg Corn Cheese Wrap (Rs120) | images/veg-soring-roll.jpg
+Double Tortilla — Paneer Cheese Wrap (Rs130) | images/veg-soring-roll.jpg
+Double Tortilla — Chicken Cheese Wrap (Rs140) | images/chicken-spring-roll.jpg
+Double Tortilla — Crispy Chicken Cheese Wrap (Rs160) | images/chicken-spring-roll.jpg
+Double Tortilla — Mix Wrap (Cochipa Wrap) (Rs150) | images/chicken-spring-roll.jpg
+Fried — Mix Veg Momo (4 pcs) (Rs50) | images/fried-momo.jpg
+Fried — Veg Cheeseball (5 pcs) (Rs50) | images/cheeseball.jpg
+Fried — Veg Nuggets (7 pcs) (Rs50) | images/veg-nuggets.jpg
+Fried — Smily (5 pcs) (Rs50) | images/smily.jpg
+Fried — French Fries (Salted) (Rs50) | images/salted-fries.jpg
+Fried — French Fries (Piri Piri) (Rs60) | images/peri-peri-fries.jpg
+
+Still awaiting photos (emoji remains):
+Fried — Onion Rings (5 pcs) (Rs50) | images/052-fried-onion-rings-5-pcs-rs50.jpg
+Fried — Pizza Bites (5 pcs) (Rs50) | images/053-fried-pizza-bites-5-pcs-rs50.jpg
+Shahi Tukda — Regular (Rs35) | images/059-shahi-tukda-regular-rs35.jpg
+Campa Cola (Rs10) | images/062-campa-cola-rs10.jpg
+Campa Lemon (Rs10) | images/063-campa-lemon-rs10.jpg
+Campa Orange (Rs10) | images/064-campa-orange-rs10.jpg
+Campa Cola (Rs20) | images/065-campa-cola-rs20.jpg
+Campa Lemon (Rs20) | images/066-campa-lemon-rs20.jpg
+Campa Orange (Rs20) | images/067-campa-orange-rs20.jpg
+Campa Can (Rs30) | images/068-campa-can-rs30.jpg
+Appy Fizz (Rs20) | images/069-appy-fizz-rs20.jpg
+Paper Boat Anar (Rs20) | images/070-paper-boat-anar-rs20.jpg
+Pista Chuski (Lolli) (Rs10) | images/071-pista-chuski-lolli-rs10.jpg
+Pineapple Chuski (Lolli) (Rs10) | images/072-pineapple-chuski-lolli-rs10.jpg
+Strawberry Chuski (Lolli) (Rs10) | images/073-strawberry-chuski-lolli-rs10.jpg
+Mango Chuski (Lolli) (Rs10) | images/074-mango-chuski-lolli-rs10.jpg
+Vanilla Cup — 40 ML (Rs10) | images/075-vanilla-cup-40-ml-rs10.jpg
+Chilly Guava Fruit Bar (Candy) (Rs10) | images/076-chilly-guava-fruit-bar-candy-rs10.jpg
+Pineapple Fruit Bar (Candy) (Rs15) | images/077-pineapple-fruit-bar-candy-rs15.jpg
+Strawberry Fruit Bar (Candy) (Rs20) | images/078-strawberry-fruit-bar-candy-rs20.jpg
+Mango Fruit Bar (Candy) (Rs25) | images/079-mango-fruit-bar-candy-rs25.jpg
+Milk Bar (Rs20) | images/080-milk-bar-rs20.jpg
+Vanilla Ball (Rs20) | images/081-vanilla-ball-rs20.jpg
+Vanilla Mini Merry Cone (Rs20) | images/082-vanilla-mini-merry-cone-rs20.jpg
+Chocolate Mini Merry Cone (Rs30) | images/083-chocolate-mini-merry-cone-rs30.jpg
+Pista Mini Merry Cone (Rs30) | images/084-pista-mini-merry-cone-rs30.jpg
+Alophonso Bar (Rs35) | images/085-alophonso-bar-rs35.jpg
+Chocolate Bar (Rs35) | images/086-chocolate-bar-rs35.jpg
+Kulfi Bar (Rs40) | images/087-kulfi-bar-rs40.jpg
+Butter Scotch Merry Cone (Rs50) | images/088-butter-scotch-merry-cone-rs50.jpg
+Strawberry Fruit Filled Cone (Rs50) | images/089-strawberry-fruit-filled-cone-rs50.jpg
+Blueberry Fruit Filled Cone (Rs60) | images/090-blueberry-fruit-filled-cone-rs60.jpg
+Chikoo Mini Tub (Rs50) | images/091-chikoo-mini-tub-rs50.jpg
+Kiwi Mini Tub (Rs50) | images/092-kiwi-mini-tub-rs50.jpg
+Sitaphal Mini Tub (Rs60) | images/093-sitaphal-mini-tub-rs60.jpg
+Tender Coconut Mini Tub — 125 ML (Rs60) | images/094-tender-coconut-mini-tub-125-ml-rs60.jpg
+Cassatta Queen (Rs50) | images/095-cassatta-queen-rs50.jpg
+Matka Kulfi (Rs50) | images/096-matka-kulfi-rs50.jpg
+Majestica Premium Bar (Rs70) | images/097-majestica-premium-bar-rs70.jpg
+Ripple Premium Bar (Rs70) | images/098-ripple-premium-bar-rs70.jpg
+Velvetine Premium Bar (Rs40) | images/099-velvetine-premium-bar-rs40.jpg
+
+GITHUB UPLOAD: upload index.html and the entire images folder into the repository root, beside existing business-banner.jpg and paytm-upi-qr.jpeg. Do not upload the ZIP itself or an enclosing home_made_tasty_bites folder.
