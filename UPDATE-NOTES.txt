@@ -39,3 +39,7 @@ Latest update:
 Photo update: 20 supplied images linked to 48 menu entries. Missing photos retain emojis. Upload the whole images folder alongside index.html.
 
 GitHub path correction: product photos now load from the same directory as index.html, matching the uploaded repository screenshot. Upload the replacement index.html; existing root-level JPEGs can remain.
+
+Wrap photo update: Veg Corn, Paneer, Chicken (including Crispy Chicken), and Mix/Cochipa use the new wrap photos for single and double tortillas. Paneer Corn photo is included as a spare; the menu has no separate Paneer Corn Wrap entry. Prices and items unchanged.
+
+Latest sides update: Onion Rings and Pizza Bites now use supplied photos. Added Cheesy Fries Rs100 with supplied photo in Fry & Sides. Existing prices preserved. Upload index.html, onion-rings.jpg, pizza-bites.jpg, and cheesy-fries.jpg beside the existing root-level GitHub files.
