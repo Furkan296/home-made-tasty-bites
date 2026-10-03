@@ -43,3 +43,7 @@ GitHub path correction: product photos now load from the same directory as index
 Wrap photo update: Veg Corn, Paneer, Chicken (including Crispy Chicken), and Mix/Cochipa use the new wrap photos for single and double tortillas. Paneer Corn photo is included as a spare; the menu has no separate Paneer Corn Wrap entry. Prices and items unchanged.
 
 Latest sides update: Onion Rings and Pizza Bites now use supplied photos. Added Cheesy Fries Rs100 with supplied photo in Fry & Sides. Existing prices preserved. Upload index.html, onion-rings.jpg, pizza-bites.jpg, and cheesy-fries.jpg beside the existing root-level GitHub files.
+
+Latest photos: Bombay Style sandwiches (4 variants), Classic Veg pizza (both sizes), Shahi Tukda, and Ice Cream Rs10–45 use newly supplied photos. Higher-priced ice creams retain their existing display.
+
+Campa photo update: six supplied photos assigned to Cola, Lemon and Orange at Rs10 and Rs20. Names/prices preserved; all prior photos retained.

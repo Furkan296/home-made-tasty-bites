@@ -1,17 +1,17 @@
-Current product photo assignments (photos sit beside index.html on GitHub):
-Jumbo (8 inch) — Classic Veg Cheese Pizza | Rs120 | magaritta-pizza.jpg
+Photos sit beside index.html on GitHub.
+Jumbo (8 inch) — Classic Veg Cheese Pizza | Rs120 | classic-veg-pizza.jpg
 Jumbo (8 inch) — Corn Cheese Pizza | Rs140 | corn-cheese-pizza.jpg
 Jumbo (8 inch) — Paneer Cheese Pizza | Rs160 | paneer-pizza.jpg
 Jumbo (8 inch) — Magaritta Pizza | Rs160 | magaritta-pizza.jpg
 Jumbo (8 inch) — Chicken Cheese Pizza | Rs180 | chicken-cheese-pizza.jpg
-Mini (6 inch) — Classic Veg Cheese Pizza | Rs80 | magaritta-pizza.jpg
+Mini (6 inch) — Classic Veg Cheese Pizza | Rs80 | classic-veg-pizza.jpg
 Mini (6 inch) — Corn Cheese Pizza | Rs100 | corn-cheese-pizza.jpg
 Mini (6 inch) — Paneer Cheese Pizza | Rs120 | paneer-pizza.jpg
 Mini (6 inch) — Chicken Cheese Pizza | Rs140 | chicken-cheese-pizza.jpg
-Bombay Style (Regular) — Veg Sandwich | Rs35 | veg-corn-cheese-sandwich.jpg
-Bombay Style (Regular) — Chicken Sandwich | Rs60 | chicken-cheese-sandwich-grilled.jpg
-Bombay Style (Regular) — Cheese Sandwich | Rs50 | veg-corn-cheese-sandwich.jpg
-Bombay Style (Regular) — Chicken Cheese Sandwich | Rs70 | chicken-cheese-sandwich-grilled.jpg
+Bombay Style (Regular) — Veg Sandwich | Rs35 | bombay-style-sandwich.jpg
+Bombay Style (Regular) — Chicken Sandwich | Rs60 | bombay-style-sandwich.jpg
+Bombay Style (Regular) — Cheese Sandwich | Rs50 | bombay-style-sandwich.jpg
+Bombay Style (Regular) — Chicken Cheese Sandwich | Rs70 | bombay-style-sandwich.jpg
 Grilled Style (Jumbo) — Veg Corn Sandwich | Rs60 | veg-corn-cheese-sandwich.jpg
 Grilled Style (Jumbo) — Veg Corn Cheese Sandwich | Rs70 | veg-corn-cheese-sandwich.jpg
 Grilled Style (Jumbo) — Paneer Sandwich | Rs70 | paneer-cheese-sandwich.jpg
@@ -49,33 +49,33 @@ Fried — Veg Nuggets (7 pcs) | Rs50 | veg-nuggets.jpg
 Fried — Smily (5 pcs) | Rs50 | smily.jpg
 Fried — French Fries (Salted) | Rs50 | salted-fries.jpg
 Fried — French Fries (Piri Piri) | Rs60 | peri-peri-fries.jpg
-Shahi Tukda — Regular | Rs35 | 059-shahi-tukda-regular-rs35.jpg
-Campa Cola | Rs10 | 062-campa-cola-rs10.jpg
-Campa Lemon | Rs10 | 063-campa-lemon-rs10.jpg
-Campa Orange | Rs10 | 064-campa-orange-rs10.jpg
-Campa Cola | Rs20 | 065-campa-cola-rs20.jpg
-Campa Lemon | Rs20 | 066-campa-lemon-rs20.jpg
-Campa Orange | Rs20 | 067-campa-orange-rs20.jpg
+Shahi Tukda — Regular | Rs35 | shahi-tukda.jpg
+Campa Cola | Rs10 | campa-cola-10.jpg
+Campa Lemon | Rs10 | campa-lemon-10.jpg
+Campa Orange | Rs10 | campa-orange-10.jpg
+Campa Cola | Rs20 | campa-cola-20.jpg
+Campa Lemon | Rs20 | campa-lemon-20.jpg
+Campa Orange | Rs20 | campa-orange-20.jpg
 Campa Can | Rs30 | 068-campa-can-rs30.jpg
 Appy Fizz | Rs20 | 069-appy-fizz-rs20.jpg
 Paper Boat Anar | Rs20 | 070-paper-boat-anar-rs20.jpg
-Pista Chuski (Lolli) | Rs10 | 071-pista-chuski-lolli-rs10.jpg
-Pineapple Chuski (Lolli) | Rs10 | 072-pineapple-chuski-lolli-rs10.jpg
-Strawberry Chuski (Lolli) | Rs10 | 073-strawberry-chuski-lolli-rs10.jpg
-Mango Chuski (Lolli) | Rs10 | 074-mango-chuski-lolli-rs10.jpg
-Vanilla Cup — 40 ML | Rs10 | 075-vanilla-cup-40-ml-rs10.jpg
-Chilly Guava Fruit Bar (Candy) | Rs10 | 076-chilly-guava-fruit-bar-candy-rs10.jpg
-Pineapple Fruit Bar (Candy) | Rs15 | 077-pineapple-fruit-bar-candy-rs15.jpg
-Strawberry Fruit Bar (Candy) | Rs20 | 078-strawberry-fruit-bar-candy-rs20.jpg
-Mango Fruit Bar (Candy) | Rs25 | 079-mango-fruit-bar-candy-rs25.jpg
-Milk Bar | Rs20 | 080-milk-bar-rs20.jpg
-Vanilla Ball | Rs20 | 081-vanilla-ball-rs20.jpg
-Vanilla Mini Merry Cone | Rs20 | 082-vanilla-mini-merry-cone-rs20.jpg
-Chocolate Mini Merry Cone | Rs30 | 083-chocolate-mini-merry-cone-rs30.jpg
-Pista Mini Merry Cone | Rs30 | 084-pista-mini-merry-cone-rs30.jpg
-Alophonso Bar | Rs35 | 085-alophonso-bar-rs35.jpg
-Chocolate Bar | Rs35 | 086-chocolate-bar-rs35.jpg
-Kulfi Bar | Rs40 | 087-kulfi-bar-rs40.jpg
+Pista Chuski (Lolli) | Rs10 | ice-cream-bars.jpg
+Pineapple Chuski (Lolli) | Rs10 | ice-cream-bars.jpg
+Strawberry Chuski (Lolli) | Rs10 | ice-cream-bars.jpg
+Mango Chuski (Lolli) | Rs10 | ice-cream-bars.jpg
+Vanilla Cup — 40 ML | Rs10 | ice-cream-bars.jpg
+Chilly Guava Fruit Bar (Candy) | Rs10 | ice-cream-bars.jpg
+Pineapple Fruit Bar (Candy) | Rs15 | ice-cream-bars.jpg
+Strawberry Fruit Bar (Candy) | Rs20 | ice-cream-bars.jpg
+Mango Fruit Bar (Candy) | Rs25 | ice-cream-bars.jpg
+Milk Bar | Rs20 | ice-cream-bars.jpg
+Vanilla Ball | Rs20 | ice-cream-bars.jpg
+Vanilla Mini Merry Cone | Rs20 | ice-cream-bars.jpg
+Chocolate Mini Merry Cone | Rs30 | ice-cream-bars.jpg
+Pista Mini Merry Cone | Rs30 | ice-cream-bars.jpg
+Alophonso Bar | Rs35 | ice-cream-bars.jpg
+Chocolate Bar | Rs35 | ice-cream-bars.jpg
+Kulfi Bar | Rs40 | ice-cream-bars.jpg
 Butter Scotch Merry Cone | Rs50 | 088-butter-scotch-merry-cone-rs50.jpg
 Strawberry Fruit Filled Cone | Rs50 | 089-strawberry-fruit-filled-cone-rs50.jpg
 Blueberry Fruit Filled Cone | Rs60 | 090-blueberry-fruit-filled-cone-rs60.jpg
@@ -87,5 +87,5 @@ Cassatta Queen | Rs50 | 095-cassatta-queen-rs50.jpg
 Matka Kulfi | Rs50 | 096-matka-kulfi-rs50.jpg
 Majestica Premium Bar | Rs70 | 097-majestica-premium-bar-rs70.jpg
 Ripple Premium Bar | Rs70 | 098-ripple-premium-bar-rs70.jpg
-Velvetine Premium Bar | Rs40 | 099-velvetine-premium-bar-rs40.jpg
+Velvetine Premium Bar | Rs40 | ice-cream-bars.jpg
 Cheesy Fries | Rs100 | cheesy-fries.jpg
