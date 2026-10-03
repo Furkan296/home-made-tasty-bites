@@ -47,3 +47,5 @@ Latest sides update: Onion Rings and Pizza Bites now use supplied photos. Added 
 Latest photos: Bombay Style sandwiches (4 variants), Classic Veg pizza (both sizes), Shahi Tukda, and Ice Cream Rs10–45 use newly supplied photos. Higher-priced ice creams retain their existing display.
 
 Campa photo update: six supplied photos assigned to Cola, Lemon and Orange at Rs10 and Rs20. Names/prices preserved; all prior photos retained.
+
+Latest drinks update: photos for Paper Boat Anar, Appy Fizz and Campa Can; added Paper Boat Tender Coconut Rs20 and Campa Energy Drink Rs20, with photos.

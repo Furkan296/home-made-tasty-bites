@@ -56,9 +56,9 @@ Campa Orange | Rs10 | campa-orange-10.jpg
 Campa Cola | Rs20 | campa-cola-20.jpg
 Campa Lemon | Rs20 | campa-lemon-20.jpg
 Campa Orange | Rs20 | campa-orange-20.jpg
-Campa Can | Rs30 | 068-campa-can-rs30.jpg
-Appy Fizz | Rs20 | 069-appy-fizz-rs20.jpg
-Paper Boat Anar | Rs20 | 070-paper-boat-anar-rs20.jpg
+Campa Can | Rs30 | campa-can.jpg
+Appy Fizz | Rs20 | appy-fizz.jpg
+Paper Boat Anar | Rs20 | paper-boat-anar.jpg
 Pista Chuski (Lolli) | Rs10 | ice-cream-bars.jpg
 Pineapple Chuski (Lolli) | Rs10 | ice-cream-bars.jpg
 Strawberry Chuski (Lolli) | Rs10 | ice-cream-bars.jpg
@@ -89,3 +89,5 @@ Majestica Premium Bar | Rs70 | 097-majestica-premium-bar-rs70.jpg
 Ripple Premium Bar | Rs70 | 098-ripple-premium-bar-rs70.jpg
 Velvetine Premium Bar | Rs40 | ice-cream-bars.jpg
 Cheesy Fries | Rs100 | cheesy-fries.jpg
+Paper Boat Tender Coconut | Rs20 | paper-boat-tender-coconut.jpg
+Campa Energy Drink | Rs20 | campa-energy-drink.jpg
