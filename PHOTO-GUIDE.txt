@@ -50,6 +50,11 @@ Fried — Smily (5 pcs) | Rs50 | smily.jpg
 Fried — French Fries (Salted) | Rs50 | salted-fries.jpg
 Fried — French Fries (Piri Piri) | Rs60 | peri-peri-fries.jpg
 Shahi Tukda — Regular | Rs35 | shahi-tukda.jpg
+Pulpy Mango | Rs20 | pulpy-mango.jpg
+Pulpy Strawberry | Rs20 | pulpy-strawberry.jpg
+Pulpy Watermelon | Rs20 | pulpy-watermelon.jpg
+Pulpy Litchi | Rs20 | pulpy-litchi.jpg
+Independence Water Bottle — 750 ML | Rs15 | independence-water.jpg
 Campa Cola | Rs10 | campa-cola-10.jpg
 Campa Lemon | Rs10 | campa-lemon-10.jpg
 Campa Orange | Rs10 | campa-orange-10.jpg
@@ -59,35 +64,36 @@ Campa Orange | Rs20 | campa-orange-20.jpg
 Campa Can | Rs30 | campa-can-new.jpg
 Appy Fizz | Rs20 | appy-fizz.jpg
 Paper Boat Anar | Rs20 | paper-boat-anar.jpg
-Pista Chuski (Lolli) | Rs10 | No matching supplied photo
-Pineapple Chuski (Lolli) | Rs10 | No matching supplied photo
-Strawberry Chuski (Lolli) | Rs10 | No matching supplied photo
-Mango Chuski (Lolli) | Rs10 | No matching supplied photo
-Vanilla Cup — 40 ML | Rs10 | No matching supplied photo
+Pista Chuski (Lolli) | Rs10 | 
+Pineapple Chuski (Lolli) | Rs10 | 
+Strawberry Chuski (Lolli) | Rs10 | 
+Mango Chuski (Lolli) | Rs10 | 
+Vanilla Cup — 40 ML | Rs10 | 
 Chilly Guava Fruit Bar (Candy) | Rs10 | chilly-guava-bar.jpg
-Pineapple Fruit Bar (Candy) | Rs15 | No matching supplied photo
+Pineapple Fruit Bar (Candy) | Rs15 | 
 Strawberry Fruit Bar (Candy) | Rs20 | strawberry-fruit-bar.jpg
 Mango Fruit Bar (Candy) | Rs25 | mango-fruit-bar.jpg
 Milk Bar | Rs20 | milk-bar.jpg
-Vanilla Ball | Rs20 | No matching supplied photo
+Vanilla Ball | Rs20 | 
 Vanilla Mini Merry Cone | Rs20 | vanilla-mini-cone.jpg
-Chocolate Mini Merry Cone | Rs30 | No matching supplied photo
+Chocolate Mini Merry Cone | Rs30 | 
 Pista Mini Merry Cone | Rs30 | pista-cone.jpg
 Alophonso Bar | Rs35 | mango-duet-bar.jpg
 Chocolate Bar | Rs35 | chocolate-bar.jpg
 Kulfi Bar | Rs40 | kulfi-bar.jpg
-Butter Scotch Merry Cone | Rs50 | No matching supplied photo
+Butter Scotch Merry Cone | Rs50 | 
 Strawberry Fruit Filled Cone | Rs50 | strawberry-cone.jpg
 Blueberry Fruit Filled Cone | Rs60 | blueberry-cone.jpg
-Chikoo Mini Tub | Rs50 | No matching supplied photo
-Kiwi Mini Tub | Rs50 | No matching supplied photo
-Sitaphal Mini Tub | Rs60 | No matching supplied photo
-Tender Coconut Mini Tub — 125 ML | Rs60 | No matching supplied photo
-Cassatta Queen | Rs50 | No matching supplied photo
-Matka Kulfi | Rs50 | No matching supplied photo
-Majestica Premium Bar | Rs70 | No matching supplied photo
-Ripple Premium Bar | Rs70 | No matching supplied photo
+Chikoo Mini Tub | Rs50 | 
+Kiwi Mini Tub | Rs50 | 
+Sitaphal Mini Tub | Rs60 | 
+Tender Coconut Mini Tub — 125 ML | Rs60 | 
+Cassatta Queen | Rs50 | 
+Matka Kulfi | Rs50 | 
+Majestica Premium Bar | Rs70 | 
+Ripple Premium Bar | Rs70 | 
 Velvetine Premium Bar | Rs40 | velvetine-bar.jpg
 Cheesy Fries | Rs100 | cheesy-fries.jpg
 Paper Boat Tender Coconut | Rs20 | paper-boat-tender-coconut.jpg
 Campa Energy Drink | Rs20 | campa-energy-drink.jpg
+NOTE: Uploaded Mango photo says Rs25/250 ML; website price is Rs20 per latest instruction. Replace photo with matching Rs20 artwork.
