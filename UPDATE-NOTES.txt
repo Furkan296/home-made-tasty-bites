@@ -49,3 +49,5 @@ Latest photos: Bombay Style sandwiches (4 variants), Classic Veg pizza (both siz
 Campa photo update: six supplied photos assigned to Cola, Lemon and Orange at Rs10 and Rs20. Names/prices preserved; all prior photos retained.
 
 Latest drinks update: photos for Paper Boat Anar, Appy Fizz and Campa Can; added Paper Boat Tender Coconut Rs20 and Campa Energy Drink Rs20, with photos.
+
+Latest checkout/menu update: unit prices and line totals for every item; QR first/default, COD second, gateway removed. Delivery charges are excluded and confirmed by phone/paid on delivery. Pizza labels Loaded (6 slices), Mini (4 slices), prices unchanged. New matched ice cream photos replace the shared photo; unmatched ice creams use emojis. Mango Duet photo used for existing Alophonso Bar Rs35 as a representative image. Velvetine Cone photo included but no separate cone item added. Campa Can has refreshed image filename to avoid old browser cache.
