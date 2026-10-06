@@ -53,3 +53,5 @@ Latest drinks update: photos for Paper Boat Anar, Appy Fizz and Campa Can; added
 Latest checkout/menu update: unit prices and line totals for every item; QR first/default, COD second, gateway removed. Delivery charges are excluded and confirmed by phone/paid on delivery. Pizza labels Loaded (6 slices), Mini (4 slices), prices unchanged. New matched ice cream photos replace the shared photo; unmatched ice creams use emojis. Mango Duet photo used for existing Alophonso Bar Rs35 as a representative image. Velvetine Cone photo included but no separate cone item added. Campa Can has refreshed image filename to avoid old browser cache.
 
 Latest update: timing notice and location-based delivery fee table on cart, review and delivery information. Updated hero sentence. Four Pulpy drinks placed first in Drinks at Rs20 each per latest user instruction; Independence water 750 ML Rs15. Mango supplied image still says Rs25/250 ML; actual menu price Rs20.
+
+WhatsApp formatting: removed opening shop name, bold name/phone/food total/preparation/delivery timings; blank line after food total; bold italic delivery address.
