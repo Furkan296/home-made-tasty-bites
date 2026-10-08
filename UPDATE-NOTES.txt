@@ -55,3 +55,7 @@ Latest checkout/menu update: unit prices and line totals for every item; QR firs
 Latest update: timing notice and location-based delivery fee table on cart, review and delivery information. Updated hero sentence. Four Pulpy drinks placed first in Drinks at Rs20 each per latest user instruction; Independence water 750 ML Rs15. Mango supplied image still says Rs25/250 ML; actual menu price Rs20.
 
 WhatsApp formatting: removed opening shop name, bold name/phone/food total/preparation/delivery timings; blank line after food total; bold italic delivery address.
+
+Add-ons update: optional extras picker for Pizza, Sandwiches, Burgers, Wraps. Corn Rs20; Paneer Rs20; Cheese Rs10; Chicken Rs20; Mayo sachet Rs5; Ketchup sachet Rs5; combined Oregano/Chilli flakes sachet Rs5. Relevant options depend on item; vegetarian items have no chicken option. Different selections use separate cart lines and include extras in unit prices, totals and WhatsApp summary. Upload only index.html.
+
+Pulpy promotion: optional popup when opening a nonempty cart, featuring Litchi, Mango, Strawberry and Watermelon with photos and current prices. Add buttons update cart immediately. Skip/continue/close supported. Shown once per cart session, suppressed when a Pulpy drink is already selected. Upload only index.html.
