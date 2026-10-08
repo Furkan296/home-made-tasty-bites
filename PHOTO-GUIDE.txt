@@ -1,11 +1,11 @@
 Loaded (6 slices) — Classic Veg Cheese Pizza | Rs120 | classic-veg-pizza.jpg
-Loaded (6 slices) — Corn Cheese Pizza | Rs140 | corn-cheese-pizza.jpg
+Loaded (6 slices) — Corn Cheese Pizza | Rs140 | corn-cheese-pizza-new.jpg
 Loaded (6 slices) — Paneer Cheese Pizza | Rs160 | paneer-pizza.jpg
 Loaded (6 slices) — Magaritta Pizza | Rs180 | magaritta-pizza.jpg
 Loaded (6 slices) — Cheese Burst Pizza | Rs200 | cheese-burst-pizza.jpg
 Loaded (6 slices) — Chicken Cheese Pizza | Rs180 | chicken-cheese-pizza.jpg
 Mini (4 slices) — Classic Veg Cheese Pizza | Rs80 | classic-veg-pizza.jpg
-Mini (4 slices) — Corn Cheese Pizza | Rs100 | corn-cheese-pizza.jpg
+Mini (4 slices) — Corn Cheese Pizza | Rs100 | corn-cheese-pizza-new.jpg
 Mini (4 slices) — Paneer Cheese Pizza | Rs120 | paneer-pizza.jpg
 Mini (4 slices) — Chicken Cheese Pizza | Rs140 | chicken-cheese-pizza.jpg
 Bombay Style (Regular) — Veg Sandwich | Rs35 | bombay-style-sandwich.jpg
@@ -54,10 +54,10 @@ Pulpy Mango | Rs25 | pulpy-mango-new.jpg
 Pulpy Strawberry | Rs20 | pulpy-strawberry-new.jpg
 Pulpy Watermelon | Rs20 | pulpy-watermelon-new.jpg
 Pulpy Litchi | Rs20 | pulpy-litchi-new.jpg
-Independence Water Bottle — 750 ML | Rs15 | independence-water.jpg
 Campa Cola | Rs10 | campa-cola-10-v2.jpg
 Campa Lemon | Rs10 | campa-lemon-10-v2.jpg
 Campa Orange | Rs10 | campa-orange-v2.jpg
+Independence Water Bottle — 750 ML | Rs15 | independence-water.jpg
 Campa Cola | Rs20 | campa-cola-20-v2.jpg
 Campa Lemon | Rs20 | campa-lemon-20-v2.jpg
 Campa Orange | Rs20 | campa-orange-v2.jpg
@@ -83,9 +83,12 @@ Chocolate Bar | Rs35 | ice-chocobar-35rs-new.jpg
 Kulfi Bar | Rs40 | ice-kulfi-ar-40rs-new.jpg
 Butter Scotch Merry Cone | Rs50 | ice-butter-scotch-merry-cone-v2.jpg
 Strawberry Fruit Filled Cone | Rs50 | ice-strawberry-cone-50rs-1-new.jpg
+Passion Fruit Cone | Rs50 | ice-passion-fruit-new.jpg
 Blueberry Fruit Filled Cone | Rs60 | ice-blueberry-cone-60rs-1-new.jpg
 Mini Tub Chikoo | Rs50 | ice-mini-tub-chikoo-new.jpg
 Mini Tub Kiwi | Rs50 | ice-kiwi-mini-tub-v2.jpg
+Mini Tub Strawberry | Rs50 | ice-mini-tub-strawberry-v3.jpg
+Mini Tub Alphonso Mango | Rs50 | ice-mini-tub-alphonso-mango-v3.jpg
 Mini Tub Sitaphal | Rs60 | ice-mini-tub-sitaphal-new.jpg
 Mini Tub Tender Coconut | Rs60 | ice-mini-tub-tender-coconut-new.jpg
 Cassatta Queen | Rs50 | ice-casatta-new.jpg
@@ -95,8 +98,5 @@ Velvetine Premium Bar | Rs40 | ice-velvetine-bar-40rs-1-new.jpg
 Cheesy Fries | Rs100 | cheesy-fries.jpg
 Paper Boat Tender Coconut | Rs20 | paper-boat-tender-coconut.jpg
 Campa Energy Drink | Rs20 | campa-energy-drink.jpg
-Passion Fruit Cone | Rs50 | ice-passion-fruit-new.jpg
 Hana Lemon | Rs10 | hana-lemon.jpg
 Hana Ginger | Rs10 | hana-ginger.jpg
-Mini Tub Alphonso Mango | Rs50 | ice-mini-tub-alphonso-mango-v3.jpg
-Mini Tub Strawberry | Rs50 | ice-mini-tub-strawberry-v3.jpg
