@@ -59,9 +59,3 @@ WhatsApp formatting: removed opening shop name, bold name/phone/food total/prepa
 Add-ons update: optional extras picker for Pizza, Sandwiches, Burgers, Wraps. Corn Rs20; Paneer Rs20; Cheese Rs10; Chicken Rs20; Mayo sachet Rs5; Ketchup sachet Rs5; combined Oregano/Chilli flakes sachet Rs5. Relevant options depend on item; vegetarian items have no chicken option. Different selections use separate cart lines and include extras in unit prices, totals and WhatsApp summary. Upload only index.html.
 
 Pulpy promotion: optional popup when opening a nonempty cart, featuring Litchi, Mango, Strawberry and Watermelon with photos and current prices. Add buttons update cart immediately. Skip/continue/close supported. Shown once per cart session, suppressed when a Pulpy drink is already selected. Upload only index.html.
-
-Ice cream refresh: 15 matching item photos replaced, 5 spare images included. Names and prices preserved. New filenames avoid old image cache. Upload index.html and all ice-*-new.jpg files beside existing GitHub files.
-
-Ice cream update: replaced 11 product photos, removed Matka Kulfi, added Passion Fruit Cone Rs50. Vanilla Cup remains Rs10. Upload index.html and all supplied image files to the repository root.
-
-Delivery fee added: Nayandahalli / Gangondanahalli / Layarpalya Rs70, including cart, review and WhatsApp summary.
