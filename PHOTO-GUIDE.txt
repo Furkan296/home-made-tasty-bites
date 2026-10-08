@@ -55,12 +55,12 @@ Pulpy Strawberry | Rs20 | pulpy-strawberry.jpg
 Pulpy Watermelon | Rs20 | pulpy-watermelon.jpg
 Pulpy Litchi | Rs20 | pulpy-litchi.jpg
 Independence Water Bottle — 750 ML | Rs15 | independence-water.jpg
-Campa Cola | Rs10 | campa-cola-10.jpg
-Campa Lemon | Rs10 | campa-lemon-10.jpg
-Campa Orange | Rs10 | campa-orange-10.jpg
-Campa Cola | Rs20 | campa-cola-20.jpg
-Campa Lemon | Rs20 | campa-lemon-20.jpg
-Campa Orange | Rs20 | campa-orange-20.jpg
+Campa Cola | Rs10 | campa-cola-10-v2.jpg
+Campa Lemon | Rs10 | campa-lemon-10-v2.jpg
+Campa Orange | Rs10 | campa-orange-v2.jpg
+Campa Cola | Rs20 | campa-cola-20-v2.jpg
+Campa Lemon | Rs20 | campa-lemon-20-v2.jpg
+Campa Orange | Rs20 | campa-orange-v2.jpg
 Campa Can | Rs30 | campa-can-new.jpg
 Appy Fizz | Rs10 | appy-fizz.jpg
 Paper Boat Anar | Rs20 | paper-boat-anar.jpg
@@ -70,9 +70,9 @@ Strawberry Chuski (Lolli) | Rs10 | ice-strawberry-chuski-lolli-v2.jpg
 Mango Chuski (Lolli) | Rs10 | ice-mango-chuski-lolli-v2.jpg
 Vanilla Cup — 40 ML | Rs10 | ice-vanilla-cup-40-ml-v2.jpg
 Chilly Guava Fruit Bar (Candy) | Rs10 | ice-chilly-guava-fruit-bar-candy-v2.jpg
-Pineapple Fruit Bar (Candy) | Rs15 | 
-Strawberry Fruit Bar (Candy) | Rs20 | strawberry-fruit-bar.jpg
-Mango Fruit Bar (Candy) | Rs25 | mango-fruit-bar.jpg
+Pineapple Fruit Bar (Candy) | Rs15 | ice-pineapple-fruit-bar-v3.jpg
+Strawberry Fruit Bar (Candy) | Rs20 | ice-strawberry-fruit-bar-v3.jpg
+Mango Fruit Bar (Candy) | Rs25 | ice-mango-fruit-bar-v3.jpg
 Milk Bar | Rs20 | ice-milk-bar-pista-20rs-new.jpg
 Vanilla Ball | Rs20 | ice-vanilla-ball-new.jpg
 Vanilla Mini Merry Cone | Rs20 | ice-vanilla-cone-20rs-1-new.jpg
@@ -84,10 +84,10 @@ Kulfi Bar | Rs40 | ice-kulfi-ar-40rs-new.jpg
 Butter Scotch Merry Cone | Rs50 | ice-butter-scotch-merry-cone-v2.jpg
 Strawberry Fruit Filled Cone | Rs50 | ice-strawberry-cone-50rs-1-new.jpg
 Blueberry Fruit Filled Cone | Rs60 | ice-blueberry-cone-60rs-1-new.jpg
-Chikoo Mini Tub | Rs50 | ice-mini-tub-chikoo-new.jpg
-Kiwi Mini Tub | Rs50 | ice-kiwi-mini-tub-v2.jpg
-Sitaphal Mini Tub | Rs60 | ice-mini-tub-sitaphal-new.jpg
-Tender Coconut Mini Tub — 125 ML | Rs60 | ice-mini-tub-tender-coconut-new.jpg
+Mini Tub Chikoo | Rs50 | ice-mini-tub-chikoo-new.jpg
+Mini Tub Kiwi | Rs50 | ice-kiwi-mini-tub-v2.jpg
+Mini Tub Sitaphal | Rs60 | ice-mini-tub-sitaphal-new.jpg
+Mini Tub Tender Coconut | Rs60 | ice-mini-tub-tender-coconut-new.jpg
 Cassatta Queen | Rs50 | ice-casatta-new.jpg
 Majestica Premium Bar | Rs70 | ice-majestica-bar-70rs-new.jpg
 Ripple Premium Bar | Rs70 | ice-ripple-premium-bar-v2.jpg
@@ -96,3 +96,7 @@ Cheesy Fries | Rs100 | cheesy-fries.jpg
 Paper Boat Tender Coconut | Rs20 | paper-boat-tender-coconut.jpg
 Campa Energy Drink | Rs20 | campa-energy-drink.jpg
 Passion Fruit Cone | Rs50 | ice-passion-fruit-new.jpg
+Hana Lemon | Rs10 | hana-lemon.jpg
+Hana Ginger | Rs10 | hana-ginger.jpg
+Mini Tub Alphonso Mango | Rs50 | ice-mini-tub-alphonso-mango-v3.jpg
+Mini Tub Strawberry | Rs50 | ice-mini-tub-strawberry-v3.jpg

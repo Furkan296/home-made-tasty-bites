@@ -65,3 +65,9 @@ Ice cream refresh: 15 matching item photos replaced, 5 spare images included. Na
 Ice cream update: replaced 11 product photos, removed Matka Kulfi, added Passion Fruit Cone Rs50. Vanilla Cup remains Rs10. Upload index.html and all supplied image files to the repository root.
 
 Delivery fee added: Nayandahalli / Gangondanahalli / Layarpalya Rs70, including cart, review and WhatsApp summary.
+
+Added Hana Lemon and Hana Ginger Rs10 each with photos. Refreshed Campa Cola, Lemon and Orange photos for Rs10/Rs20. Both Orange sizes share the supplied single-bottle photo.
+
+Updated Strawberry/Mango/Pineapple Fruit Bar photos. Added Mini Tub Alphonso Mango and Mini Tub Strawberry Rs50 each. Renamed Mini Tub Tender Coconut, Chikoo, Sitaphal and Kiwi; existing prices preserved.
+
+Upload package reduced to 83 required files by excluding unused older images. All current menu images, banner and QR retained. Upload files inside the folder, not the ZIP or enclosing folder.
