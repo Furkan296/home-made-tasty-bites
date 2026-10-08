@@ -1,11 +1,11 @@
-Loaded (6 slices) — Classic Veg Cheese Pizza | Rs120 | classic-veg-pizza.jpg
-Loaded (6 slices) — Corn Cheese Pizza | Rs140 | corn-cheese-pizza-new.jpg
+Loaded (6 slices) — Classic Veg Cheese Pizza | Rs120 | corn-cheese-pizza-new.jpg
+Loaded (6 slices) — Corn Cheese Pizza | Rs140 | corn-cheese-pizza.jpg
 Loaded (6 slices) — Paneer Cheese Pizza | Rs160 | paneer-pizza.jpg
 Loaded (6 slices) — Magaritta Pizza | Rs180 | magaritta-pizza.jpg
 Loaded (6 slices) — Cheese Burst Pizza | Rs200 | cheese-burst-pizza.jpg
 Loaded (6 slices) — Chicken Cheese Pizza | Rs180 | chicken-cheese-pizza.jpg
-Mini (4 slices) — Classic Veg Cheese Pizza | Rs80 | classic-veg-pizza.jpg
-Mini (4 slices) — Corn Cheese Pizza | Rs100 | corn-cheese-pizza-new.jpg
+Mini (4 slices) — Classic Veg Cheese Pizza | Rs80 | corn-cheese-pizza-new.jpg
+Mini (4 slices) — Corn Cheese Pizza | Rs100 | corn-cheese-pizza.jpg
 Mini (4 slices) — Paneer Cheese Pizza | Rs120 | paneer-pizza.jpg
 Mini (4 slices) — Chicken Cheese Pizza | Rs140 | chicken-cheese-pizza.jpg
 Bombay Style (Regular) — Veg Sandwich | Rs35 | bombay-style-sandwich.jpg

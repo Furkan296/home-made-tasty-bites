@@ -77,3 +77,5 @@ Cheese Burst Pizza Rs200: renamed Loaded (6 slices), photo added, placed after M
 Replaced four Pulpy photos in menu and promotion popup; prices preserved. Added About cafe section and navigation link with supplied story and motto.
 
 Moved Passion Fruit Cone after Strawberry Cone; Mini Tub Strawberry and Alphonso Mango after Kiwi; Independence Water after Rs10 Campa Orange. Updated both Corn Cheese Pizza photos.
+
+Correction: new veg pizza photo applies to Loaded and Mini Classic Veg Cheese Pizza. Both Corn Cheese Pizza sizes restored to their previous photo.
