@@ -71,3 +71,7 @@ Added Hana Lemon and Hana Ginger Rs10 each with photos. Refreshed Campa Cola, Le
 Updated Strawberry/Mango/Pineapple Fruit Bar photos. Added Mini Tub Alphonso Mango and Mini Tub Strawberry Rs50 each. Renamed Mini Tub Tender Coconut, Chikoo, Sitaphal and Kiwi; existing prices preserved.
 
 Upload package reduced to 83 required files by excluding unused older images. All current menu images, banner and QR retained. Upload files inside the folder, not the ZIP or enclosing folder.
+
+Cheese Burst Pizza Rs200: renamed Loaded (6 slices), photo added, placed after Magaritta. This item only: no extra corn, extra cheese Rs20; mayo/ketchup/seasoning unchanged.
+
+Replaced four Pulpy photos in menu and promotion popup; prices preserved. Added About cafe section and navigation link with supplied story and motto.
