@@ -79,3 +79,7 @@ Replaced four Pulpy photos in menu and promotion popup; prices preserved. Added 
 Moved Passion Fruit Cone after Strawberry Cone; Mini Tub Strawberry and Alphonso Mango after Kiwi; Independence Water after Rs10 Campa Orange. Updated both Corn Cheese Pizza photos.
 
 Correction: new veg pizza photo applies to Loaded and Mini Classic Veg Cheese Pizza. Both Corn Cheese Pizza sizes restored to their previous photo.
+
+Corrected Classic/Corn/Paneer/Chicken pizza extras for both sizes: only matching topping plus cheese Rs20 and seasoning Rs5. Extras button says Continue without add-ons or Continue with add-ons according to selection.
+
+Product photos now open a large photo dialog by click or keyboard, including Pulpy popup photos. Close with X, Back to menu, outside click or Escape.
