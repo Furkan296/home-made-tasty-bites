@@ -1,13 +1,13 @@
-Photos sit beside index.html on GitHub.
 Loaded (6 slices) — Classic Veg Cheese Pizza | Rs120 | classic-veg-pizza.jpg
 Loaded (6 slices) — Corn Cheese Pizza | Rs140 | corn-cheese-pizza.jpg
 Loaded (6 slices) — Paneer Cheese Pizza | Rs160 | paneer-pizza.jpg
-Loaded (6 slices) — Magaritta Pizza | Rs160 | magaritta-pizza.jpg
+Loaded (6 slices) — Magaritta Pizza | Rs180 | magaritta-pizza.jpg
 Loaded (6 slices) — Chicken Cheese Pizza | Rs180 | chicken-cheese-pizza.jpg
 Mini (4 slices) — Classic Veg Cheese Pizza | Rs80 | classic-veg-pizza.jpg
 Mini (4 slices) — Corn Cheese Pizza | Rs100 | corn-cheese-pizza.jpg
 Mini (4 slices) — Paneer Cheese Pizza | Rs120 | paneer-pizza.jpg
 Mini (4 slices) — Chicken Cheese Pizza | Rs140 | chicken-cheese-pizza.jpg
+Cheese Burst Pizza | Rs200 | classic-veg-pizza.jpg
 Bombay Style (Regular) — Veg Sandwich | Rs35 | bombay-style-sandwich.jpg
 Bombay Style (Regular) — Chicken Sandwich | Rs60 | bombay-style-sandwich.jpg
 Bombay Style (Regular) — Cheese Sandwich | Rs50 | bombay-style-sandwich.jpg
@@ -43,14 +43,14 @@ Double Tortilla — Crispy Chicken Cheese Wrap | Rs160 | chicken-wrap.jpg
 Double Tortilla — Mix Wrap (Cochipa Wrap) | Rs150 | cochipa-wrap.jpg
 Fried — Mix Veg Momo (4 pcs) | Rs50 | fried-momo.jpg
 Fried — Onion Rings (5 pcs) | Rs50 | onion-rings.jpg
-Fried — Pizza Bites (5 pcs) | Rs50 | pizza-bites.jpg
+Fried — Cheesy Corn Shots (5 pcs) | Rs50 | pizza-bites.jpg
 Fried — Veg Cheeseball (5 pcs) | Rs50 | cheeseball.jpg
 Fried — Veg Nuggets (7 pcs) | Rs50 | veg-nuggets.jpg
 Fried — Smily (5 pcs) | Rs50 | smily.jpg
 Fried — French Fries (Salted) | Rs50 | salted-fries.jpg
 Fried — French Fries (Piri Piri) | Rs60 | peri-peri-fries.jpg
 Shahi Tukda — Regular | Rs35 | shahi-tukda.jpg
-Pulpy Mango | Rs20 | pulpy-mango.jpg
+Pulpy Mango | Rs25 | pulpy-mango.jpg
 Pulpy Strawberry | Rs20 | pulpy-strawberry.jpg
 Pulpy Watermelon | Rs20 | pulpy-watermelon.jpg
 Pulpy Litchi | Rs20 | pulpy-litchi.jpg
@@ -62,38 +62,37 @@ Campa Cola | Rs20 | campa-cola-20.jpg
 Campa Lemon | Rs20 | campa-lemon-20.jpg
 Campa Orange | Rs20 | campa-orange-20.jpg
 Campa Can | Rs30 | campa-can-new.jpg
-Appy Fizz | Rs20 | appy-fizz.jpg
+Appy Fizz | Rs10 | appy-fizz.jpg
 Paper Boat Anar | Rs20 | paper-boat-anar.jpg
-Pista Chuski (Lolli) | Rs10 | 
-Pineapple Chuski (Lolli) | Rs10 | 
-Strawberry Chuski (Lolli) | Rs10 | 
-Mango Chuski (Lolli) | Rs10 | 
-Vanilla Cup — 40 ML | Rs10 | 
-Chilly Guava Fruit Bar (Candy) | Rs10 | chilly-guava-bar.jpg
+Pista Chuski (Lolli) | Rs10 | ice-pista-chuski-lolli-v2.jpg
+Pineapple Chuski (Lolli) | Rs10 | ice-pineapple-chuski-lolli-v2.jpg
+Strawberry Chuski (Lolli) | Rs10 | ice-strawberry-chuski-lolli-v2.jpg
+Mango Chuski (Lolli) | Rs10 | ice-mango-chuski-lolli-v2.jpg
+Vanilla Cup — 40 ML | Rs10 | ice-vanilla-cup-40-ml-v2.jpg
+Chilly Guava Fruit Bar (Candy) | Rs10 | ice-chilly-guava-fruit-bar-candy-v2.jpg
 Pineapple Fruit Bar (Candy) | Rs15 | 
 Strawberry Fruit Bar (Candy) | Rs20 | strawberry-fruit-bar.jpg
 Mango Fruit Bar (Candy) | Rs25 | mango-fruit-bar.jpg
-Milk Bar | Rs20 | milk-bar.jpg
-Vanilla Ball | Rs20 | 
-Vanilla Mini Merry Cone | Rs20 | vanilla-mini-cone.jpg
-Chocolate Mini Merry Cone | Rs30 | 
-Pista Mini Merry Cone | Rs30 | pista-cone.jpg
-Alophonso Bar | Rs35 | mango-duet-bar.jpg
-Chocolate Bar | Rs35 | chocolate-bar.jpg
-Kulfi Bar | Rs40 | kulfi-bar.jpg
-Butter Scotch Merry Cone | Rs50 | 
-Strawberry Fruit Filled Cone | Rs50 | strawberry-cone.jpg
-Blueberry Fruit Filled Cone | Rs60 | blueberry-cone.jpg
-Chikoo Mini Tub | Rs50 | 
-Kiwi Mini Tub | Rs50 | 
-Sitaphal Mini Tub | Rs60 | 
-Tender Coconut Mini Tub — 125 ML | Rs60 | 
-Cassatta Queen | Rs50 | 
-Matka Kulfi | Rs50 | 
-Majestica Premium Bar | Rs70 | 
-Ripple Premium Bar | Rs70 | 
-Velvetine Premium Bar | Rs40 | velvetine-bar.jpg
+Milk Bar | Rs20 | ice-milk-bar-pista-20rs-new.jpg
+Vanilla Ball | Rs20 | ice-vanilla-ball-new.jpg
+Vanilla Mini Merry Cone | Rs20 | ice-vanilla-cone-20rs-1-new.jpg
+Chocolate Mini Merry Cone | Rs30 | ice-chocolate-mini-merry-cone-v2.jpg
+Pista Mini Merry Cone | Rs30 | ice-pista-cone-new.jpg
+Alophonso Bar | Rs35 | ice-alophonso-bar-v2.jpg
+Chocolate Bar | Rs35 | ice-chocobar-35rs-new.jpg
+Kulfi Bar | Rs40 | ice-kulfi-ar-40rs-new.jpg
+Butter Scotch Merry Cone | Rs50 | ice-butter-scotch-merry-cone-v2.jpg
+Strawberry Fruit Filled Cone | Rs50 | ice-strawberry-cone-50rs-1-new.jpg
+Blueberry Fruit Filled Cone | Rs60 | ice-blueberry-cone-60rs-1-new.jpg
+Chikoo Mini Tub | Rs50 | ice-mini-tub-chikoo-new.jpg
+Kiwi Mini Tub | Rs50 | ice-kiwi-mini-tub-v2.jpg
+Sitaphal Mini Tub | Rs60 | ice-mini-tub-sitaphal-new.jpg
+Tender Coconut Mini Tub — 125 ML | Rs60 | ice-mini-tub-tender-coconut-new.jpg
+Cassatta Queen | Rs50 | ice-casatta-new.jpg
+Majestica Premium Bar | Rs70 | ice-majestica-bar-70rs-new.jpg
+Ripple Premium Bar | Rs70 | ice-ripple-premium-bar-v2.jpg
+Velvetine Premium Bar | Rs40 | ice-velvetine-bar-40rs-1-new.jpg
 Cheesy Fries | Rs100 | cheesy-fries.jpg
 Paper Boat Tender Coconut | Rs20 | paper-boat-tender-coconut.jpg
 Campa Energy Drink | Rs20 | campa-energy-drink.jpg
-NOTE: Uploaded Mango photo says Rs25/250 ML; website price is Rs20 per latest instruction. Replace photo with matching Rs20 artwork.
+Passion Fruit Cone | Rs50 | ice-passion-fruit-new.jpg
