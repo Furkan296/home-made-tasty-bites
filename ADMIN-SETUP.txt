@@ -1,0 +1,44 @@
+HOME MADE TASTY BITES — PRIVATE ADMIN SETUP
+
+1. Supabase project > SQL Editor > New query.
+2. Open SUPABASE-SETUP.sql in a text editor, copy ALL its text, paste into SQL Editor, click Run.
+   Expected result: Setup complete, with the seeded menu item count.
+   Rerunning preserves existing orders and admin changes to price and stock.
+3. Authentication > Users: confirm user 2199f32b-7679-4405-8d4b-18f6aa65b72c belongs to furkanmahmood939@gmail.com.
+   Use the password you created there. No password is included in this package.
+   You may disable public user sign-ups in Authentication settings. This website has no customer signup.
+4. Only AFTER step 2 succeeds, upload index.html, shop-backend.js and admin.html to the ROOT of your existing GitHub repository.
+   If any photos from prior ZIP updates are still missing, upload the supplied JPG/PNG photos too.
+   Do not upload SUPABASE-SETUP.sql, this document or the enclosing folder as your website.
+5. Commit. Wait for the GitHub Pages workflow to finish, then hard refresh the website.
+6. Admin URL: https://furkan296.github.io/home-made-tasty-bites/admin.html
+   This redirects to index.html#admin. No admin button is shown in the customer navigation.
+   Anyone may reach the login page, but only your UID can read orders or edit prices/availability.
+
+HOW IT WORKS
+- Menu prices and availability refresh every 15 seconds while the page is visible.
+- The customer can browse menu photos while connecting, but ordering is blocked if the database is unavailable.
+- Prices & stock: edit the price, tick/untick Available, and Save for that item.
+- Orders: shows latest 200 shared orders; refreshes every 15 seconds. Status and WhatsApp update are separate actions.
+- New orders are saved BEFORE WhatsApp opens. Default status is Awaiting WhatsApp confirmation.
+  Check that the customer sent their message before preparing. A redirect does not prove a message was sent.
+- UPI screenshots remain in WhatsApp. Payments must be verified manually. Delivery charges remain separate.
+- Order number is allocated in the database: HMTB-YYYYMMDD-001, -002, etc., based on India time.
+- Customers do not need an account. The database recalculates totals and rejects unavailable items and invalid extras.
+- The browser saves admin session tokens only in this tab's session storage. Use Sign out on shared devices.
+- No secret/service-role key is included. Database permission policies protect private customer orders.
+- The current admin can change existing prices and availability. Adding products, photos or reordering still requires a code update.
+
+VERIFY AFTER SETUP
+A. Open storefront in an incognito window: menu loads; there is no demo Admin button.
+B. Sign in at the admin URL with your email and password.
+C. Mark one item unavailable and Save. Within 15 seconds, the incognito storefront should show Out of stock.
+D. Restore it to available. Place a small TEST order from the incognito browser.
+E. Its new order number should appear in admin; it should match the WhatsApp summary.
+F. Check stock, correct quantities and total, then mark the test order Cancelled.
+
+LIMITATIONS
+- The ZIP has been tested locally with simulated Supabase responses in a DOM test and a local PostgreSQL-compatible runtime.
+- The actual Supabase project still requires running the SQL and testing with your private admin account.
+- Shared historical orders cannot be recovered from WhatsApp or previous customer browsers automatically.
+- Public anonymous checkout can receive bogus orders; confirm the WhatsApp message/payment before preparing.
