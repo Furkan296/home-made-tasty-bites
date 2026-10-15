@@ -2,13 +2,14 @@
 const SHOP_URL='https://hgaatkotnirazfxwwauu.supabase.co';
 const SHOP_KEY='sb_publishable_MIdQp1nPJbexQTmlrHrgCw_8haAD8Q2';
 const SHOP_ADMIN='2199f32b-7679-4405-8d4b-18f6aa65b72c';
+let restaurantOpen=false,restaurantSaving=false;
 let shopReady=false,shopSession=null,sharedOrders=[],shopBusy=false,menuRefreshing=false;
 try{shopSession=JSON.parse(sessionStorage.getItem('hmtb_admin_session')||'null')}catch(e){}
 const htmlSafe=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function saveSession(session){shopSession=session;if(session)sessionStorage.setItem('hmtb_admin_session',JSON.stringify(session));else sessionStorage.removeItem('hmtb_admin_session')}
-async function shopFetch(path,{method='GET',body,admin=false}={}){
+async function shopFetch(path,{method='GET',body,admin=false,returnRows=false}={}){
  if(admin){if(!shopSession)throw Error('Please sign in.');if(Date.now()>=shopSession.expires_at*1000-60000){let session=await shopFetch('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token:shopSession.refresh_token}});saveSession({...session,expires_at:Math.floor(Date.now()/1000)+session.expires_in});}}
- const headers={apikey:SHOP_KEY,'Content-Type':'application/json'};if(admin)headers.Authorization='Bearer '+shopSession.access_token;
+ const headers={apikey:SHOP_KEY,'Content-Type':'application/json'};if(returnRows)headers.Prefer='return=representation';if(admin)headers.Authorization='Bearer '+shopSession.access_token;
  const response=await fetch(SHOP_URL+path,{method,headers,body:body===undefined?undefined:JSON.stringify(body),signal:AbortSignal.timeout(15000)});
  const text=await response.text();let data;try{data=text?JSON.parse(text):null}catch(e){throw Error('Could not connect to the shop. Please retry.')}
  if(!response.ok){if(admin&&(response.status===401||response.status===403)){saveSession(null);resetAdmin();}throw Error(data?.message||data?.msg||data?.error_description||'Request failed. Please retry.')}
@@ -16,40 +17,40 @@ async function shopFetch(path,{method='GET',body,admin=false}={}){
 }
 function shopNotice(message){document.getElementById('shopConnection').textContent=message;}
 const baseRenderProducts=renderProducts;
-renderProducts=function(){baseRenderProducts();document.querySelectorAll('#products .product').forEach((node,i)=>{let products=menu.filter(x=>!x.isVariant&&(selected==='All'||x.category===selected));let p=products[i];if(!p)return;let button=node.querySelector('.add');if(button&&(!shopReady||p.available===false)){button.disabled=true;button.textContent=p.available===false?'Out of stock':'Connecting…';}if(p.available===false)node.classList.add('out-of-stock')})};
+renderProducts=function(){baseRenderProducts();document.querySelectorAll('#products .product').forEach((node,i)=>{let products=menu.filter(x=>!x.isVariant&&(selected==='All'||x.category===selected));let p=products[i];if(!p)return;let button=node.querySelector('.add');if(button&&(!shopReady||!restaurantOpen||p.available===false)){button.disabled=true;button.textContent=!shopReady?'Connecting…':!restaurantOpen?'Restaurant closed':'Out of stock';}if(p.available===false)node.classList.add('out-of-stock')})};
 const originalExtrasFor=extrasFor;
 extrasFor=function(p){let base=menu.find(x=>x.id===(p.baseId||p.id));return base?.serverExtras||originalExtrasFor(p)};
 const originalAddToCart=addToCart;
-addToCart=function(id){let p=menu.find(x=>x.id===id),base=menu.find(x=>x.id===(p?.baseId||id));if(!shopReady){alert('The menu is connecting. Please wait and try again.');return}if(!base||base.available===false){alert('This item is out of stock.');return}originalAddToCart(id)};
+addToCart=function(id){let p=menu.find(x=>x.id===id),base=menu.find(x=>x.id===(p?.baseId||id));if(!shopReady){alert('The menu is connecting. Please wait and try again.');return}if(!restaurantOpen){alert('The restaurant is closed. Please order when we reopen.');return}if(!base||base.available===false){alert('This item is out of stock.');return}originalAddToCart(id)};
 const originalConfirmExtras=confirmExtras;
-confirmExtras=function(){let p=menu.find(x=>x.id===extrasProductId);if(!shopReady||p?.available===false){alert('This item is currently unavailable.');return}originalConfirmExtras()};
+confirmExtras=function(){let p=menu.find(x=>x.id===extrasProductId);if(!shopReady||!restaurantOpen||p?.available===false){alert('This item is currently unavailable.');return}originalConfirmExtras()};
 async function refreshSharedMenu(){
  if(menuRefreshing)return;menuRefreshing=true;
  try{
-  const rows=await shopFetch('/rest/v1/hmtb_menu?select=*&order=sort_order.asc');if(!Array.isArray(rows)||!rows.length)throw Error('Menu setup is incomplete.');
+  const [rows,settings]=await Promise.all([shopFetch('/rest/v1/hmtb_menu?select=*&order=sort_order.asc'),shopFetch('/rest/v1/hmtb_settings?id=eq.1&select=is_open')]);if(!Array.isArray(settings)||settings.length!==1||typeof settings[0].is_open!=='boolean')throw Error('Restaurant status setup is incomplete.');restaurantOpen=settings[0].is_open;if(!Array.isArray(rows)||!rows.length)throw Error('Menu setup is incomplete.');
   let changed=false;for(const p of menu.filter(x=>!x.isVariant)){const row=rows.find(x=>x.id===p.id);if(!row){p.available=false;continue}if(p.price!==row.price||p.available!==row.available)changed=true;p.price=row.price;p.available=row.available;p.serverExtras=row.extras;}
   for(const p of menu.filter(x=>x.isVariant)){let base=menu.find(x=>x.id===p.baseId);p.available=base?.available;p.basePrice=base?.price;p.price=p.basePrice+p.extras.reduce((n,e)=>n+e.price,0)}
-  if(changed&&!shopBusy&&pendingOrder){pendingOrder=null;if(document.getElementById('reviewModal').classList.contains('open')){closeModal('reviewModal');document.getElementById('cartModal').classList.add('open');alert('Prices or availability changed. Please review your cart again.');}}shopReady=true;shopNotice('Menu availability and prices updated. Delivery charges are separate.');renderProducts();updateCart();if(document.getElementById('pulpyPromoModal').classList.contains('open'))renderPulpyPromo();
- }catch(e){shopReady=false;shopNotice('Ordering is temporarily unavailable. Please retry or contact the shop on 9620711053.');renderProducts();}
+  if(changed&&!shopBusy&&pendingOrder){pendingOrder=null;if(document.getElementById('reviewModal').classList.contains('open')){closeModal('reviewModal');document.getElementById('cartModal').classList.add('open');alert('Prices or availability changed. Please review your cart again.');}}shopReady=true;syncRestaurantStatus();shopNotice(restaurantOpen?'Menu availability and prices updated. Delivery charges are separate.':'The restaurant is closed. You can browse the menu; new orders are paused.');renderProducts();updateCart();if(document.getElementById('pulpyPromoModal').classList.contains('open'))renderPulpyPromo();
+ }catch(e){shopReady=false;syncRestaurantStatus();shopNotice('Ordering is temporarily unavailable. Please retry or contact the shop on 9620711053.');renderProducts();}
  finally{menuRefreshing=false;}
 }
 const originalRenderPulpy=renderPulpyPromo;
-renderPulpyPromo=function(){originalRenderPulpy();const products=pulpyProducts();document.querySelectorAll('#pulpyPromoProducts .pulpy-card').forEach((node,i)=>{let p=products[i];if(p&&(!shopReady||p.available===false)){let button=node.querySelector('button');if(button){button.disabled=true;button.textContent=p.available===false?'Out of stock':'Connecting…'}}})};
+renderPulpyPromo=function(){originalRenderPulpy();const products=pulpyProducts();document.querySelectorAll('#pulpyPromoProducts .pulpy-card').forEach((node,i)=>{let p=products[i];if(p&&(!shopReady||!restaurantOpen||p.available===false)){let button=node.querySelector('button');if(button){button.disabled=true;button.textContent=!shopReady?'Connecting…':!restaurantOpen?'Restaurant closed':'Out of stock'}}})};
 const originalPlaceOrder=placeOrder;
-placeOrder=function(){if(!shopReady){alert('Please wait for the menu to connect.');return}if(menu.some(x=>cart[x.id]&&x.available===false)){alert('An item in your cart is out of stock. Remove it before continuing.');return}originalPlaceOrder();if(pendingOrder&&!pendingOrder.requestId){pendingOrder.requestId=crypto.randomUUID();pendingOrder.id='Assigned when you send the order';document.getElementById('orderPreview').textContent=formatOrder(pendingOrder);}};
+placeOrder=function(){if(!restaurantOpen){alert('The restaurant is closed. Please order when we reopen.');return}if(!shopReady){alert('Please wait for the menu to connect.');return}if(menu.some(x=>cart[x.id]&&x.available===false)){alert('An item in your cart is out of stock. Remove it before continuing.');return}originalPlaceOrder();if(pendingOrder&&!pendingOrder.requestId){pendingOrder.requestId=crypto.randomUUID();pendingOrder.id='Assigned when you send the order';document.getElementById('orderPreview').textContent=formatOrder(pendingOrder);}};
 sendOrderToWhatsApp=async function(){
- if(!pendingOrder||shopBusy)return;const order=pendingOrder;shopBusy=true;const button=document.getElementById('sendWhatsAppButton');button.disabled=true;button.textContent='Saving your order…';
+ if(!pendingOrder||shopBusy)return;if(!shopReady||!restaurantOpen){alert('The restaurant is not accepting orders right now.');return}const order=pendingOrder;shopBusy=true;const button=document.getElementById('sendWhatsAppButton');button.disabled=true;button.textContent='Saving your order…';
  try{
   const lines=menu.filter(p=>cart[p.id]).map(p=>({id:p.baseId||p.id,qty:cart[p.id],extras:(p.extras||[]).map(e=>e.key)}));
   const result=await shopFetch('/rest/v1/rpc/hmtb_place_order',{method:'POST',body:{p_request_id:order.requestId,p_name:order.name,p_phone:order.phone,p_address:order.address,p_map:order.map||'',p_payment:order.payment,p_items:lines,p_expected_total:order.total}});
   Object.assign(order,result);pendingOrder=order;document.getElementById('orderPreview').textContent=formatOrder(order);
   window.location.href='https://wa.me/91'+ADMIN_PHONE+'?text='+encodeURIComponent(formatOrder(order));
  }catch(e){alert('Order could not be saved: '+e.message);await refreshSharedMenu();}
- finally{shopBusy=false;button.disabled=false;button.textContent=order.payment==='UPIQR'?'Open WhatsApp & attach payment screenshot':'Send order via WhatsApp';}
+ finally{shopBusy=false;button.disabled=!shopReady||!restaurantOpen;button.textContent=order.payment==='UPIQR'?'Open WhatsApp & attach payment screenshot':'Send order via WhatsApp';}
 };
 function resetAdmin(){sharedOrders=[];document.getElementById('adminLogin').classList.remove('hidden');document.getElementById('adminPanel').classList.add('hidden');document.getElementById('adminOrders').replaceChildren();document.getElementById('adminMenu').replaceChildren();}
 function assertAdmin(){if(shopSession?.user?.id!==SHOP_ADMIN)throw Error('This account does not have shop admin access.')}
-openAdminLogin=function(){document.getElementById('adminModal').classList.add('open');if(shopSession?.user?.id===SHOP_ADMIN){document.getElementById('adminLogin').classList.add('hidden');document.getElementById('adminPanel').classList.remove('hidden');renderAdminOrders();}else resetAdmin()};
+openAdminLogin=function(){document.getElementById('adminModal').classList.add('open');if(shopSession?.user?.id===SHOP_ADMIN){document.getElementById('adminLogin').classList.add('hidden');document.getElementById('adminPanel').classList.remove('hidden');syncRestaurantStatus();renderAdminOrders();}else resetAdmin()};
 adminLogin=async function(){let button=document.getElementById('adminSignIn');button.disabled=true;document.getElementById('adminError').textContent='Signing in…';try{
  let data=await shopFetch('/auth/v1/token?grant_type=password',{method:'POST',body:{email:document.getElementById('adminEmail').value.trim(),password:document.getElementById('adminPass').value}});
  if(data.user?.id!==SHOP_ADMIN)throw Error('This account does not have shop admin access.');saveSession({...data,expires_at:Math.floor(Date.now()/1000)+data.expires_in});document.getElementById('adminPass').value='';document.getElementById('adminError').textContent='';openAdminLogin();
@@ -65,3 +66,19 @@ async function saveMenuItem(id,button){button.disabled=true;try{assertAdmin();le
 function openAdminFromHash(){if(location.hash==='#admin')openAdminLogin()}
 window.addEventListener('hashchange',openAdminFromHash);openAdminFromHash();renderProducts();refreshSharedMenu();
 setInterval(()=>{if(!document.hidden){refreshSharedMenu();if(shopSession&&document.getElementById('adminModal').classList.contains('open')&&!document.getElementById('adminOrders').classList.contains('hidden')&&!document.getElementById('adminOrders').contains(document.activeElement))renderAdminOrders();}},15000);
+
+function syncRestaurantStatus(){
+ const text=!shopReady?'Checking restaurant availability…':restaurantOpen?'OPEN — accepting orders':'CLOSED — not accepting orders right now';
+ const banner=document.getElementById('restaurantStatus');banner.textContent=text;banner.style.background=!shopReady?'#fff0e4':restaurantOpen?'#e8f5e9':'#ffe5e5';banner.style.color=restaurantOpen&&shopReady?'#1b6035':'#942b22';
+ document.getElementById('adminRestaurantStatus').textContent=text;
+ const button=document.getElementById('restaurantToggle');button.disabled=!shopReady||restaurantSaving;button.setAttribute('aria-checked',String(restaurantOpen&&shopReady));button.textContent=restaurantSaving?'Saving…':!shopReady?'Unavailable':restaurantOpen?'Turn OFF — close restaurant':'Turn ON — open restaurant';
+ if(!shopBusy)document.getElementById('sendWhatsAppButton').disabled=!shopReady||!restaurantOpen;
+}
+async function setRestaurantOpen(value){
+ if(restaurantSaving)return;restaurantSaving=true;syncRestaurantStatus();
+ try{assertAdmin();const rows=await shopFetch('/rest/v1/hmtb_settings?id=eq.1',{method:'PATCH',admin:true,body:{is_open:!!value},returnRows:true});if(!Array.isArray(rows)||rows.length!==1)throw Error('Restaurant status was not saved. Please sign in again.');restaurantOpen=rows[0].is_open;shopReady=true;renderProducts();if(document.getElementById('pulpyPromoModal').classList.contains('open'))renderPulpyPromo();shopNotice(restaurantOpen?'Restaurant is open. Customers can place orders.':'Restaurant is closed. New orders are paused.');}
+ catch(e){alert('Could not change restaurant status: '+e.message);}
+ finally{restaurantSaving=false;syncRestaurantStatus();}
+}
+const originalGoCheckout=goCheckout;
+goCheckout=function(){if(!shopReady||!restaurantOpen){alert('The restaurant is not accepting orders right now.');return}originalGoCheckout()};
