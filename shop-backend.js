@@ -17,7 +17,7 @@ async function shopFetch(path,{method='GET',body,admin=false,returnRows=false}={
 }
 function shopNotice(message){document.getElementById('shopConnection').textContent=message;}
 const baseRenderProducts=renderProducts;
-renderProducts=function(){baseRenderProducts();document.querySelectorAll('#products .product').forEach((node,i)=>{let products=menu.filter(x=>!x.isVariant&&(selected==='All'||x.category===selected));let p=products[i];if(!p)return;let button=node.querySelector('.add');if(button&&(!shopReady||!restaurantOpen||p.available===false)){button.disabled=true;button.textContent=!shopReady?'Connecting…':!restaurantOpen?'Restaurant closed':'Out of stock';}if(p.available===false)node.classList.add('out-of-stock')})};
+renderProducts=function(){baseRenderProducts();document.querySelectorAll('#products .product').forEach((node,i)=>{let products=menu.filter(x=>!x.isVariant&&(selected==='All'||(selected==='Recommended'?productTags(x).length>0:x.category===selected)));let p=products[i];if(!p)return;let button=node.querySelector('.add');if(button&&(!shopReady||!restaurantOpen||p.available===false)){button.disabled=true;button.textContent=!shopReady?'Connecting…':!restaurantOpen?'Restaurant closed':'Out of stock';}if(p.available===false)node.classList.add('out-of-stock')})};
 const originalExtrasFor=extrasFor;
 extrasFor=function(p){let base=menu.find(x=>x.id===(p.baseId||p.id));return base?.serverExtras||originalExtrasFor(p)};
 const originalAddToCart=addToCart;
@@ -90,7 +90,7 @@ function syncRushMode(){
  document.getElementById('adminRushControls').classList.toggle('hidden',!usable);
  document.getElementById('adminRushStatus').textContent=(rushAuto?'AUTOMATIC SCHEDULE · ':'MANUAL OVERRIDE · ')+(rushMode?'Rush Mode is ON':'Rush Mode is OFF');
  const button=document.getElementById('rushToggle');button.disabled=!usable||rushSaving||restaurantSaving;button.setAttribute('aria-checked',String(usable&&rushMode));button.textContent=rushSaving?'Saving…':rushMode?'Turn OFF manually':'Turn ON manually';
- const auto=document.getElementById('rushAutoButton');auto.disabled=!usable||rushSaving||restaurantSaving||rushAuto;auto.textContent=rushAuto?'✓ Automatic schedule active':'Use automatic schedule';
+ const auto=document.getElementById('rushAutoButton');if(auto){auto.disabled=!usable||rushSaving||restaurantSaving||rushAuto;auto.textContent=rushAuto?'✓ Automatic schedule active':'Use automatic schedule';}
 }
 async function setRushMode(value){
  if(rushSaving||restaurantSaving)return;if(!shopReady||!restaurantOpen){alert('Rush Mode is available only while the restaurant is open.');return;}
