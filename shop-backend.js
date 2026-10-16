@@ -2,7 +2,7 @@
 const SHOP_URL='https://hgaatkotnirazfxwwauu.supabase.co';
 const SHOP_KEY='sb_publishable_MIdQp1nPJbexQTmlrHrgCw_8haAD8Q2';
 const SHOP_ADMIN='2199f32b-7679-4405-8d4b-18f6aa65b72c';
-let restaurantOpen=false,restaurantSaving=false,rushMode=false,rushSaving=false;
+let restaurantOpen=false,restaurantSaving=false,rushMode=false,rushSaving=false,rushAuto=true;
 let shopReady=false,shopSession=null,sharedOrders=[],shopBusy=false,menuRefreshing=false;
 try{shopSession=JSON.parse(sessionStorage.getItem('hmtb_admin_session')||'null')}catch(e){}
 const htmlSafe=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -27,7 +27,7 @@ confirmExtras=function(){let p=menu.find(x=>x.id===extrasProductId);if(!shopRead
 async function refreshSharedMenu(){
  if(menuRefreshing)return;menuRefreshing=true;
  try{
-  const [rows,settings]=await Promise.all([shopFetch('/rest/v1/hmtb_menu?select=*&order=sort_order.asc'),shopFetch('/rest/v1/hmtb_settings?id=eq.1&select=is_open,rush_mode')]);if(!Array.isArray(settings)||settings.length!==1||typeof settings[0].is_open!=='boolean'||typeof settings[0].rush_mode!=='boolean')throw Error('Restaurant status setup is incomplete.');restaurantOpen=settings[0].is_open;rushMode=restaurantOpen&&settings[0].rush_mode;if(!Array.isArray(rows)||!rows.length)throw Error('Menu setup is incomplete.');
+  const [rows,settings]=await Promise.all([shopFetch('/rest/v1/hmtb_menu?select=*&order=sort_order.asc'),shopFetch('/rest/v1/hmtb_restaurant_status?id=eq.1&select=is_open,rush_mode,rush_auto')]);if(!Array.isArray(settings)||settings.length!==1||typeof settings[0].is_open!=='boolean'||typeof settings[0].rush_mode!=='boolean')throw Error('Restaurant status setup is incomplete.');restaurantOpen=settings[0].is_open;rushMode=restaurantOpen&&settings[0].rush_mode;rushAuto=settings[0].rush_auto===true;if(!Array.isArray(rows)||!rows.length)throw Error('Menu setup is incomplete.');
   let changed=false;for(const p of menu.filter(x=>!x.isVariant)){const row=rows.find(x=>x.id===p.id);if(!row){p.available=false;continue}if(p.price!==row.price||p.available!==row.available)changed=true;p.price=row.price;p.available=row.available;p.serverExtras=row.extras;}
   for(const p of menu.filter(x=>x.isVariant)){let base=menu.find(x=>x.id===p.baseId);p.available=base?.available;p.basePrice=base?.price;p.price=p.basePrice+p.extras.reduce((n,e)=>n+e.price,0)}
   if(changed&&!shopBusy&&pendingOrder){pendingOrder=null;if(document.getElementById('reviewModal').classList.contains('open')){closeModal('reviewModal');document.getElementById('cartModal').classList.add('open');alert('Prices or availability changed. Please review your cart again.');}}shopReady=true;syncRestaurantStatus();shopNotice(restaurantOpen?'Menu availability and prices updated. Delivery charges are separate.':'The restaurant is closed. You can browse the menu; new orders are paused.');renderProducts();updateCart();if(document.getElementById('pulpyPromoModal').classList.contains('open'))renderPulpyPromo();
@@ -77,7 +77,7 @@ function syncRestaurantStatus(){
 }
 async function setRestaurantOpen(value){
  if(restaurantSaving)return;restaurantSaving=true;syncRestaurantStatus();
- try{assertAdmin();const rows=await shopFetch('/rest/v1/hmtb_settings?id=eq.1',{method:'PATCH',admin:true,body:{is_open:!!value},returnRows:true});if(!Array.isArray(rows)||rows.length!==1)throw Error('Restaurant status was not saved. Please sign in again.');restaurantOpen=rows[0].is_open;rushMode=restaurantOpen&&rows[0].rush_mode===true;shopReady=true;renderProducts();if(document.getElementById('pulpyPromoModal').classList.contains('open'))renderPulpyPromo();shopNotice(restaurantOpen?'Restaurant is open. Customers can place orders.':'Restaurant is closed. New orders are paused.');}
+ try{assertAdmin();const rows=await shopFetch('/rest/v1/hmtb_settings?id=eq.1',{method:'PATCH',admin:true,body:{is_open:!!value},returnRows:true});if(!Array.isArray(rows)||rows.length!==1)throw Error('Restaurant status was not saved. Please sign in again.');await loadRushStatus();shopReady=true;renderProducts();if(document.getElementById('pulpyPromoModal').classList.contains('open'))renderPulpyPromo();shopNotice(restaurantOpen?'Restaurant is open. Customers can place orders.':'Restaurant is closed. New orders are paused.');}
  catch(e){alert('Could not change restaurant status: '+e.message);}
  finally{restaurantSaving=false;syncRestaurantStatus();}
 }
@@ -88,13 +88,27 @@ function syncRushMode(){
  const usable=shopReady&&restaurantOpen;
  document.getElementById('rushNotice').hidden=!(usable&&rushMode);
  document.getElementById('adminRushControls').classList.toggle('hidden',!usable);
- document.getElementById('adminRushStatus').textContent=rushMode?'Rush Mode is ON — customers can see the high-demand notice.':'Rush Mode is OFF — standard restaurant status is shown.';
- const button=document.getElementById('rushToggle');button.disabled=!usable||rushSaving||restaurantSaving;button.setAttribute('aria-checked',String(usable&&rushMode));button.textContent=rushSaving?'Saving…':rushMode?'Turn OFF Rush Mode':'Turn ON Rush Mode';
+ document.getElementById('adminRushStatus').textContent=(rushAuto?'AUTOMATIC SCHEDULE · ':'MANUAL OVERRIDE · ')+(rushMode?'Rush Mode is ON':'Rush Mode is OFF');
+ const button=document.getElementById('rushToggle');button.disabled=!usable||rushSaving||restaurantSaving;button.setAttribute('aria-checked',String(usable&&rushMode));button.textContent=rushSaving?'Saving…':rushMode?'Turn OFF manually':'Turn ON manually';
+ const auto=document.getElementById('rushAutoButton');auto.disabled=!usable||rushSaving||restaurantSaving||rushAuto;auto.textContent=rushAuto?'✓ Automatic schedule active':'Use automatic schedule';
 }
 async function setRushMode(value){
  if(rushSaving||restaurantSaving)return;if(!shopReady||!restaurantOpen){alert('Rush Mode is available only while the restaurant is open.');return;}
  rushSaving=true;syncRushMode();
- try{assertAdmin();const rows=await shopFetch('/rest/v1/hmtb_settings?id=eq.1',{method:'PATCH',admin:true,body:{rush_mode:!!value},returnRows:true});if(!Array.isArray(rows)||rows.length!==1)throw Error('Rush Mode was not saved. Please sign in again.');restaurantOpen=rows[0].is_open;rushMode=restaurantOpen&&rows[0].rush_mode===true;syncRestaurantStatus();renderProducts();}
+ try{assertAdmin();const rows=await shopFetch('/rest/v1/hmtb_settings?id=eq.1',{method:'PATCH',admin:true,body:{rush_mode:!!value,rush_auto:false},returnRows:true});if(!Array.isArray(rows)||rows.length!==1)throw Error('Rush Mode was not saved. Please sign in again.');await loadRushStatus();syncRestaurantStatus();renderProducts();}
  catch(e){alert('Could not change Rush Mode: '+e.message);}
+ finally{rushSaving=false;syncRushMode();}
+}
+
+async function loadRushStatus(){
+ const rows=await shopFetch('/rest/v1/hmtb_restaurant_status?id=eq.1&select=is_open,rush_mode,rush_auto');
+ if(!Array.isArray(rows)||rows.length!==1||typeof rows[0].is_open!=='boolean'||typeof rows[0].rush_mode!=='boolean'||typeof rows[0].rush_auto!=='boolean')throw Error('Could not read restaurant schedule. Please refresh.');
+ restaurantOpen=rows[0].is_open;rushMode=restaurantOpen&&rows[0].rush_mode;rushAuto=rows[0].rush_auto;
+}
+async function useAutomaticRush(){
+ if(rushSaving||restaurantSaving||!shopReady||!restaurantOpen)return;
+ rushSaving=true;syncRushMode();
+ try{assertAdmin();const rows=await shopFetch('/rest/v1/hmtb_settings?id=eq.1',{method:'PATCH',admin:true,body:{rush_auto:true},returnRows:true});if(!Array.isArray(rows)||rows.length!==1)throw Error('Automatic schedule was not saved.');await loadRushStatus();syncRestaurantStatus();}
+ catch(e){alert('Could not enable automatic Rush Mode: '+e.message);}
  finally{rushSaving=false;syncRushMode();}
 }
