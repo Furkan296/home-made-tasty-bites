@@ -2,6 +2,7 @@
 const SHOP_URL='https://hgaatkotnirazfxwwauu.supabase.co';
 const SHOP_KEY='sb_publishable_MIdQp1nPJbexQTmlrHrgCw_8haAD8Q2';
 const SHOP_ADMIN='2199f32b-7679-4405-8d4b-18f6aa65b72c';
+let openingAuto=true,openingOverrideUntil=null;
 let restaurantOpen=false,restaurantSaving=false,rushMode=false,rushSaving=false,rushAuto=true;
 let shopReady=false,shopSession=null,sharedOrders=[],shopBusy=false,menuRefreshing=false;
 try{shopSession=JSON.parse(sessionStorage.getItem('hmtb_admin_session')||'null')}catch(e){}
@@ -27,7 +28,7 @@ confirmExtras=function(){let p=menu.find(x=>x.id===extrasProductId);if(!shopRead
 async function refreshSharedMenu(){
  if(menuRefreshing)return;menuRefreshing=true;
  try{
-  const [rows,settings]=await Promise.all([shopFetch('/rest/v1/hmtb_menu?select=*&order=sort_order.asc'),shopFetch('/rest/v1/hmtb_restaurant_status?id=eq.1&select=is_open,rush_mode,rush_auto')]);if(!Array.isArray(settings)||settings.length!==1||typeof settings[0].is_open!=='boolean'||typeof settings[0].rush_mode!=='boolean')throw Error('Restaurant status setup is incomplete.');restaurantOpen=settings[0].is_open;rushMode=restaurantOpen&&settings[0].rush_mode;rushAuto=settings[0].rush_auto===true;if(!Array.isArray(rows)||!rows.length)throw Error('Menu setup is incomplete.');
+  const [rows,settings]=await Promise.all([shopFetch('/rest/v1/hmtb_menu?select=*&order=sort_order.asc'),shopFetch('/rest/v1/hmtb_restaurant_status?id=eq.1&select=is_open,rush_mode,rush_auto,hours_auto,hours_override_until')]);if(!Array.isArray(settings)||settings.length!==1||typeof settings[0].is_open!=='boolean'||typeof settings[0].rush_mode!=='boolean')throw Error('Restaurant status setup is incomplete.');restaurantOpen=settings[0].is_open;rushMode=restaurantOpen&&settings[0].rush_mode;rushAuto=settings[0].rush_auto===true;openingAuto=settings[0].hours_auto===true;openingOverrideUntil=settings[0].hours_override_until;if(!Array.isArray(rows)||!rows.length)throw Error('Menu setup is incomplete.');
   let changed=false;for(const p of menu.filter(x=>!x.isVariant)){const row=rows.find(x=>x.id===p.id);if(!row){p.available=false;continue}if(p.price!==row.price||p.available!==row.available)changed=true;p.price=row.price;p.available=row.available;p.serverExtras=row.extras;}
   for(const p of menu.filter(x=>x.isVariant)){let base=menu.find(x=>x.id===p.baseId);p.available=base?.available;p.basePrice=base?.price;p.price=p.basePrice+p.extras.reduce((n,e)=>n+e.price,0)}
   if(changed&&!shopBusy&&pendingOrder){pendingOrder=null;if(document.getElementById('reviewModal').classList.contains('open')){closeModal('reviewModal');document.getElementById('cartModal').classList.add('open');alert('Prices or availability changed. Please review your cart again.');}}shopReady=true;syncRestaurantStatus();shopNotice(restaurantOpen?'Menu availability and prices updated. Delivery charges are separate.':'The restaurant is closed. You can browse the menu; new orders are paused.');renderProducts();updateCart();if(document.getElementById('pulpyPromoModal').classList.contains('open'))renderPulpyPromo();
@@ -69,15 +70,15 @@ setInterval(()=>{if(!document.hidden){refreshSharedMenu();if(shopSession&&docume
 
 function syncRestaurantStatus(){
  const text=!shopReady?'Checking restaurant availability…':restaurantOpen?'OPEN — accepting orders':'CLOSED — not accepting orders right now';
- const banner=document.getElementById('restaurantStatus');banner.dataset.state=!shopReady?'checking':restaurantOpen?'open':'closed';banner.innerHTML='<span class="status-dot" aria-hidden="true"></span><div><strong>'+(!shopReady?'CHECKING AVAILABILITY':restaurantOpen?'OPEN NOW · LET’S EAT!':'CLOSED · BACK SOON')+'</strong><span>'+(!shopReady?'Connecting to our kitchen. Please wait a moment.':restaurantOpen?'Fresh food, made with love. We’re accepting your orders.':'Join us 4 PM–11 PM &amp; 12 AM–3 AM. We look forward to serving you.')+'</span></div>';
- document.getElementById('adminRestaurantStatus').textContent=text;
- const button=document.getElementById('restaurantToggle');button.disabled=!shopReady||restaurantSaving;button.setAttribute('aria-checked',String(restaurantOpen&&shopReady));button.textContent=restaurantSaving?'Saving…':!shopReady?'Unavailable':restaurantOpen?'Turn OFF — close restaurant':'Turn ON — open restaurant';
+ const banner=document.getElementById('restaurantStatus');banner.dataset.state=!shopReady?'checking':restaurantOpen?'open':'closed';banner.innerHTML='<span class="status-dot" aria-hidden="true"></span><div><strong>'+(!shopReady?'CHECKING AVAILABILITY':restaurantOpen?'OPEN NOW · LET’S EAT!':'CLOSED · BACK SOON')+'</strong><span>'+(!shopReady?'Connecting to our kitchen. Please wait a moment.':restaurantOpen?'Fresh food, made with love. We’re accepting your orders.':'Mon–Sat: 4 PM–3 AM next morning. Sunday: 4 PM–11 PM. We look forward to serving you.')+'</span></div>';
+ document.getElementById('adminRestaurantStatus').textContent=text;syncOpeningHoursMode();
+ const button=document.getElementById('restaurantToggle');button.disabled=!shopReady||restaurantSaving;button.setAttribute('aria-checked',String(restaurantOpen&&shopReady));button.textContent=restaurantSaving?'Saving…':!shopReady?'Unavailable':restaurantOpen?'Close temporarily':'Open temporarily';
  if(!shopBusy)document.getElementById('sendWhatsAppButton').disabled=!shopReady||!restaurantOpen;
  syncRushMode();
 }
 async function setRestaurantOpen(value){
  if(restaurantSaving)return;restaurantSaving=true;syncRestaurantStatus();
- try{assertAdmin();const rows=await shopFetch('/rest/v1/hmtb_settings?id=eq.1',{method:'PATCH',admin:true,body:{is_open:!!value},returnRows:true});if(!Array.isArray(rows)||rows.length!==1)throw Error('Restaurant status was not saved. Please sign in again.');await loadRushStatus();shopReady=true;renderProducts();if(document.getElementById('pulpyPromoModal').classList.contains('open'))renderPulpyPromo();shopNotice(restaurantOpen?'Restaurant is open. Customers can place orders.':'Restaurant is closed. New orders are paused.');}
+ try{assertAdmin();const rows=await shopFetch('/rest/v1/hmtb_settings?id=eq.1',{method:'PATCH',admin:true,body:{is_open:!!value,hours_auto:false},returnRows:true});if(!Array.isArray(rows)||rows.length!==1)throw Error('Restaurant status was not saved. Please sign in again.');await loadRushStatus();shopReady=true;renderProducts();if(document.getElementById('pulpyPromoModal').classList.contains('open'))renderPulpyPromo();shopNotice(restaurantOpen?'Restaurant is open. Customers can place orders.':'Restaurant is closed. New orders are paused.');}
  catch(e){alert('Could not change restaurant status: '+e.message);}
  finally{restaurantSaving=false;syncRestaurantStatus();}
 }
@@ -101,9 +102,9 @@ async function setRushMode(value){
 }
 
 async function loadRushStatus(){
- const rows=await shopFetch('/rest/v1/hmtb_restaurant_status?id=eq.1&select=is_open,rush_mode,rush_auto');
+ const rows=await shopFetch('/rest/v1/hmtb_restaurant_status?id=eq.1&select=is_open,rush_mode,rush_auto,hours_auto,hours_override_until');
  if(!Array.isArray(rows)||rows.length!==1||typeof rows[0].is_open!=='boolean'||typeof rows[0].rush_mode!=='boolean'||typeof rows[0].rush_auto!=='boolean')throw Error('Could not read restaurant schedule. Please refresh.');
- restaurantOpen=rows[0].is_open;rushMode=restaurantOpen&&rows[0].rush_mode;rushAuto=rows[0].rush_auto;
+ restaurantOpen=rows[0].is_open;rushMode=restaurantOpen&&rows[0].rush_mode;rushAuto=rows[0].rush_auto;openingAuto=rows[0].hours_auto===true;openingOverrideUntil=rows[0].hours_override_until;
 }
 async function useAutomaticRush(){
  if(rushSaving||restaurantSaving||!shopReady||!restaurantOpen)return;
@@ -115,3 +116,15 @@ async function useAutomaticRush(){
 
 // One explicit formatter for the final WhatsApp handoff, including older cached inline code.
 formatOrder=function(o){let payment={COD:'COD',UPIQR:'UPI QR — awaiting shop confirmation'}[o.payment]||o.payment;return ['Order No: '+o.id,'','*Name: '+o.name+'*','*Phone: '+o.phone+'*','','Items:',...o.items.map((i,n)=>(n+1)+'. '+i.name+' 👉 *QTY: '+i.qty+'* 👈 '+money(i.price)+' each = '+money(i.qty*i.price)),'','*Food total: '+money(o.total)+'*','','Payment: '+payment,...(o.payment==='UPIQR'?['Payment screenshot: Please attach in this WhatsApp chat.']:[]),'','*_Delivery: '+o.address+'_*','Map: '+(o.map||'Not shared')].join('\n')};
+
+function syncOpeningHoursMode(){
+ const label=document.getElementById('openingHoursMode'),button=document.getElementById('hoursAutoButton');
+ if(label)label.textContent=!shopReady?'Checking opening schedule…':openingAuto?'AUTOMATIC OPENING HOURS · The restaurant opens and closes on schedule.':'TEMPORARY MANUAL OVERRIDE · Automatic resumes at '+new Date(openingOverrideUntil).toLocaleString('en-IN',{timeZone:'Asia/Kolkata',hour:'numeric',minute:'2-digit',day:'numeric',month:'short'})+' IST.';
+ if(button){button.disabled=!shopReady||restaurantSaving||openingAuto;button.textContent=openingAuto?'✓ Automatic opening hours active':'Resume automatic opening hours';}
+}
+async function useAutomaticOpeningHours(){
+ if(restaurantSaving)return;restaurantSaving=true;syncRestaurantStatus();
+ try{assertAdmin();const rows=await shopFetch('/rest/v1/hmtb_settings?id=eq.1',{method:'PATCH',admin:true,body:{hours_auto:true},returnRows:true});if(!Array.isArray(rows)||rows.length!==1)throw Error('Opening schedule was not saved.');await loadRushStatus();renderProducts();if(document.getElementById('pulpyPromoModal').classList.contains('open'))renderPulpyPromo();}
+ catch(e){alert('Could not resume automatic opening hours: '+e.message);}
+ finally{restaurantSaving=false;syncRestaurantStatus();}
+}
